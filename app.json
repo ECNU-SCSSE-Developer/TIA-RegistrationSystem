@@ -1,9 +1,10 @@
 {
   "pages":[
+    "pages/team/team",
     "pages/index/index",
     "pages/logs/logs",
-    "pages/mine/mine",
-    "pages/team/team"
+    "pages/mine/mine"
+    
   ],
   "window":{
     "backgroundTextStyle":"light",
@@ -17,10 +18,10 @@
     "borderStyle":"white",
     "backgroudColor":"#ffffff",
     "list":[{
-      "pagePath":"pages/index/index",
+      "pagePath":"pages/team/team",
       "iconPath":"image/wechat.png",
       "selectedIconPath":"image/wechatHL.png",
-      "text":"1"
+      "text":"组队"
     },{
       "pagePath": "pages/mine/mine",
       "iconPath": "image/wechat.png",
