@@ -5,7 +5,14 @@ Page({
    * 页面的初始数据
    */
   data: {
-    caseList: ["", "", "", "", "", "", "", "", "", "", "", "", "", ""]
+    caseList: [
+      {
+      message: 'foo',
+     },
+     {
+        message: 'bar'
+     }
+      ]
   },
 
   /**

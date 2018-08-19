@@ -59,7 +59,7 @@
   width: 350rpx;
   height: 200rpx;
   margin-top: 20rpx;
-  background-color: white;
+  background-color: rgb(255, 255, 255);
   display: flex;
   position: relative;
   flex-direction: column;
