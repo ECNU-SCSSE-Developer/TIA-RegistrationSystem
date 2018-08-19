@@ -1,9 +1,12 @@
 {
   "pages":[
+    "pages/matchlist/matchlist",
+    "pages/match/match",
     "pages/team/team",
     "pages/index/index",
     "pages/logs/logs",
     "pages/mine/mine"
+    
     
   ],
   "window":{
@@ -18,7 +21,7 @@
     "borderStyle":"white",
     "backgroudColor":"#ffffff",
     "list":[{
-      "pagePath":"pages/team/team",
+      "pagePath":"pages/matchlist/matchlist",
       "iconPath":"image/wechat.png",
       "selectedIconPath":"image/wechatHL.png",
       "text":"组队"
