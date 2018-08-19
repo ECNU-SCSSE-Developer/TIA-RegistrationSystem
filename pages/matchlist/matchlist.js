@@ -6,11 +6,11 @@ Page({
    */
   data: {
     caseList: [
-      {
-      message: 'foo',
+     {
+      message: 'foo'
      },
      {
-        message: 'bar'
+      message: 'bar'
      }
       ]
   },

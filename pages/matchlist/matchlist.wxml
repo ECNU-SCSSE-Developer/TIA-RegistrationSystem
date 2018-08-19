@@ -11,7 +11,7 @@
 
   <view class='case-list'>
     <view class='case-item' wx:for="{{caseList}}">
-    <navigator url="../team/team" class="weui-form-preview__btn weui-form-preview__btn_primary" hover-class="weui-form-preview__btn_active">
+    <navigator url="../match/match" class="weui-form-preview__btn weui-form-preview__btn_primary" hover-class="weui-form-preview__btn_active">
     <image  class='case-item-image' src="../../image/wechat.png">
       </image>
 </navigator>
