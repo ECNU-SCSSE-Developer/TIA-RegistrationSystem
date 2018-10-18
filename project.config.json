@@ -1,5 +1,11 @@
 {
+  "miniprogramRoot": "./miniprogram",
+  "pluginRoot": "./plugin",
+  "compileType": "plugin",
 	"description": "项目配置文件。",
+	"packOptions": {
+		"ignore": []
+	},
 	"setting": {
 		"urlCheck": true,
 		"es6": true,
@@ -7,10 +13,10 @@
 		"minified": true,
 		"newFeature": true
 	},
-	"compileType": "miniprogram",
-	"libVersion": "1.9.94",
+	
+	"libVersion": "2.2.4",
 	"appid": "wx0eb8aa287ec3013e",
-	"projectname": "scsse",
+	"projectname": "%E7%AD%9B%E9%80%89test2",
 	"isGameTourist": false,
 	"condition": {
 		"search": {

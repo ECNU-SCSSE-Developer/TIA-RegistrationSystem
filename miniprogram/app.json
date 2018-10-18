@@ -1,0 +1,50 @@
+{
+  "pages":[
+      
+    "pages/teamlist/teamlist",
+    "pages/mine/mine",
+    "pages/matchlist/matchlist",
+    "pages/team/team",
+    "pages/match/match",
+    "pages/teamform/teamform",
+    "pages/personform/personform"
+  ],
+  "window":{
+    "backgroundTextStyle":"light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "WeChat",
+    "navigationBarTextStyle":"black"
+  },
+  "plugins":{
+    "myPlugin":{
+      "version":"dev",
+      "provider":"wx0eb8aa287ec3013e"
+    }
+  },
+  "tabBar": {
+    "color": "#dddddd",
+    "selectedColor": "#638AF2",
+    "borderStyle": "white",
+    "backgroudColor": "#ffffff",
+    "list": [
+      {
+        "pagePath": "pages/teamlist/teamlist",
+        "iconPath": "image/form.png",
+        "selectedIconPath": "image/form-active.png",
+        "text": "组队"
+      },
+      {
+        "pagePath":"pages/matchlist/matchlist",
+        "iconPath":"image/form.png",
+        "selectedIconPath":"image/form-active.png",
+        "text":"比赛"
+      },
+      {
+        "pagePath": "pages/mine/mine",
+        "iconPath": "image/personal-center.png",
+        "selectedIconPath": "image/account-active.png",
+        "text": "我的"
+      }
+    ]
+  }
+}

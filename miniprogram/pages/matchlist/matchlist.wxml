@@ -1,0 +1,15 @@
+<view class="case">
+<view class='case-list'>
+    <view class='case-item' wx:for="{{caseList}}">
+    <navigator url="../match/match" class="weui-form-preview__btn weui-form-preview__btn_primary" hover-class="weui-form-preview__btn_active">
+    <image  class='case-item-image' src="{{item.image}}">
+      </image>
+</navigator>
+      
+      <view class='case-item-bottom'>
+        <text class='case-item-text'>{{item.message}}</text>
+      </view>
+    </view>
+  </view>
+
+</view>

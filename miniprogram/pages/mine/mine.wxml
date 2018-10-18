@@ -1,0 +1,51 @@
+<!--view class="weui-cells__title">我的信息</view>
+        <view class="weui-cells weui-cells_after-title">
+            <navigator url="../mine/mine/学生信息" class="weui-cell weui-cell_access" hover-class="weui-cell_active">
+                <view class="weui-cell__bd">学生信息</view>
+                <view class="weui-cell__ft weui-cell__ft_in-access"></view>
+            </navigator>
+            <navigator url="../mine/mine/联系方式" class="weui-cell weui-cell_access" hover-class="weui-cell_active">
+                <view class="weui-cell__bd">联系方式</view>
+                <view class="weui-cell__ft weui-cell__ft_in-access"></view>
+            </navigator>
+        </view-->
+
+
+
+ <view class="weui-panel">  
+ <view class="weui-panel_before">
+    <view class="weui-panel weui-panel_access">
+      <view class="weui-panel__bd">
+        <view url="" class="weui-media-box weui-media-box_appmsg" hover-class="weui-cell_active">
+          <view class="weui-media-box__hd weui-media-box__hd_in-appmsg">
+            <image class="weui-media-box__thumb" src="{{userInfo.avatarUrl}}" />
+          </view>
+          <view class="weui-media-box__bd weui-media-box__bd_in-appmsg">
+            <view class="weui-media-box__title">{{userInfo.nickName}}</view>
+            <view class="weui-media-box__desc">{{name}}</view>
+            <view class="weui-media-box__desc">{{major}}</view>
+            <view class="weui-media-box__desc">{{phone}}</view>
+          </view>
+        </view>
+      </view>
+    </view>
+    </view>
+</view>
+
+
+
+<view class="weui-cells__title">队伍</view>
+<view class="weui-cells weui-cells_after-title">
+  <navigator url="../mine/mine/队伍信息" class="weui-cell weui-cell_access" hover-class="weui-cell_active">
+    <view class="weui-cell__bd">我创建的队伍</view>
+    <view class="weui-cell__ft weui-cell__ft_in-access"></view>
+  </navigator>
+  <navigator url="../mine/mine/队伍成员" class="weui-cell weui-cell_access" hover-class="weui-cell_active">
+    <view class="weui-cell__bd">我加入的队伍</view>
+    <view class="weui-cell__ft weui-cell__ft_in-access"></view>
+  </navigator>
+  <navigator url="../mine/mine/队伍信息" class="weui-cell weui-cell_access" hover-class="weui-cell_active">
+    <view class="weui-cell__bd">我收藏的队伍</view>
+    <view class="weui-cell__ft weui-cell__ft_in-access"></view>
+  </navigator>
+</view>
