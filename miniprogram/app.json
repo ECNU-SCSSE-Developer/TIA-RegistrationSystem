@@ -7,7 +7,9 @@
     "pages/team/team",
     "pages/match/match",
     "pages/teamform/teamform",
-    "pages/personform/personform"
+    "pages/personform/personform",
+    "pages/myteam/myteam",
+    "pages/memberlist/memberlist"
   ],
   "window":{
     "backgroundTextStyle":"light",
