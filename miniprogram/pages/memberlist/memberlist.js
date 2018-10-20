@@ -1,6 +1,5 @@
 // pages/memberlist/memberlist.js
 Page({
-
   /**
    * 页面的初始数据
    */
@@ -10,21 +9,48 @@ Page({
         "id": 0,
         "name": "卢宇博你是狗吧",
         "major": "软件工程",
-        "phonenumber": "123"
+        "phonenumber": "123",
+        "state":"录用"
       }, {
         "id": 1,
           "name": "我儿子贺慈硕",
           "major": "计科",
-          "phonenumber": "456"
+          "phonenumber": "456",
+          "state": "未录用"
       }, {
         "id": 2,
           "name": "老孙",
           "major": "软件",
-          "phonenumber": "789"
+          "phonenumber": "789",
+          "state": "录用"
       }]
     }
   },
-
+  openConfirm: function (e) {
+    var id = e.currentTarget.dataset.name;
+    var that = this;
+    var state = 'team.data['+id+'].state';
+    wx.showModal({
+      title: '录用',
+      content: '修改该应聘者状态为',
+      confirmText: "录用",
+      cancelText: "未录用",
+      success: function (res) {
+        console.log(res);
+        if (res.confirm) {
+          that.setData({
+              [state]:"录用"
+          })
+          console.log('用户点击确认')
+        } else {
+          that.setData({
+            [state]: '未录用'
+          })
+          console.log('用户点击取消')
+        }
+      }
+    });
+  },
   /**
    * 生命周期函数--监听页面加载
    */
