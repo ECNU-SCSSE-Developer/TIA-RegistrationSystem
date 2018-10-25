@@ -7,34 +7,51 @@ Page({
   data: {
     caseList: [
       {
-        id: "0",
-        message: "智慧校园",
+        match_id: "0",
+        match_name: "智慧校园",
         image: "../../image/match1.jpg"
       },
       {
-        id: "1",
-        message: "科创培育项目",
+        match_id: "1",
+        match_name: "科创培育项目",
         image: "../../image/match2.png"
       },
       {
-        id: "2",
-        message: "黑客松",
+        match_id: "2",
+        match_name: "黑客松",
         image: "../../image/match3.jpg"
       },
       {
-        id: "3",
-        message: "创新创业大赛",
+        match_id: "3",
+        match_name: "创新创业大赛",
         image: "../../image/match4.jpg"
       }
     ],
-   
+
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+    var that = this;
+    wx.request({
+      url: 'http://scsse.cn/match/get/all',
+      data: {},
+      method: 'POST',
+      header: {
+        'content-type': 'application/json;charset=utf-8',
+      },
+      success: function (res) {
+        console.log('获得比赛列表：' + res.data.list);
+        that.setData({
+          match: res.data.list,
+        })
+      },
+      fail: function (res) {
+        console.log("Sorry,please try again!")
+      }
+    })
   },
 
   /**

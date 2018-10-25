@@ -6,6 +6,8 @@ Page({
    * 页面的初始数据
    */
   data: {
+    code: "",
+    openid: "",
     name: "孙雨晶",
     major: "软件工程",
     phone: "18917985620"
@@ -16,6 +18,14 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
+
+    var that = this;
+    wx.login({
+      success: function (res) {
+        code: res.code
+      }
+    })
+
     if (app.globalData.userInfo) {
       this.setData({
         userInfo: app.globalData.userInfo,
@@ -42,6 +52,26 @@ Page({
         }
       })
     }
+
+
+    wx.request({
+      url: 'http://scsse.cn/user',
+      data: {},
+      method: 'GET',
+      header: {
+        'content-type': 'application/json;charset=utf-8',
+        'sessionid': wx.getStorageSync('sessionid')
+      },
+      success: function (res) {
+        console.log('personal info: ' + res.data.list);
+        that.setData({
+          match: res.data.list,
+        })
+      },
+      fail: function (res) {
+        console.log("Sorry,please try again!")
+      }
+    })
   },
   getUserInfo: function (e) {
     console.log(e)
