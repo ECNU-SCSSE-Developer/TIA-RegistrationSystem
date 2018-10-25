@@ -1,15 +1,21 @@
 {
   "pages":[
-      
-    "pages/teamlist/teamlist",
+    "pages/teamlist_filter/teamlist_filter",
     "pages/mine/mine",
     "pages/matchlist/matchlist",
-    "pages/team/team",
     "pages/match/match",
     "pages/teamform/teamform",
     "pages/personform/personform",
     "pages/myteam/myteam",
-    "pages/memberlist/memberlist"
+    "pages/memberlist_create/memberlist_create",
+    "pages/teamform_apply/teamform_apply",
+    "pages/teamform_join/teamform_join",
+    "pages/teamform_collect/teamform_collect",
+    "pages/teamlist_apply/teamlist_apply",
+    "pages/teamlist_create/teamlist_create",
+    "pages/teamlist_collect/teamlist_collect",
+    "pages/teamlist_join/teamlist_join",
+    "pages/teamform_filter/teamform_filter"
   ],
   "window":{
     "backgroundTextStyle":"light",
@@ -30,7 +36,7 @@
     "backgroudColor": "#ffffff",
     "list": [
       {
-        "pagePath": "pages/teamlist/teamlist",
+        "pagePath": "pages/teamlist_filter/teamlist_filter",
         "iconPath": "image/form.png",
         "selectedIconPath": "image/form-active.png",
         "text": "组队"

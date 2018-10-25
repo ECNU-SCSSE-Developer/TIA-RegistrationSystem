@@ -1,0 +1,4 @@
+/* pages/teamform_filter/teamform_filter.wxss */
+.weui-form-preview{
+    margin-bottom: 25px;
+}

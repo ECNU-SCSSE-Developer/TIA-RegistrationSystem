@@ -1,3 +1,4 @@
+/* pages/teamform_join/teamform_join.wxss */
 /* pages/team/team.wxss */
 .weui-form-preview{
     margin-bottom: 25px;

@@ -1,0 +1,6 @@
+/* pages/teamform_apply/teamform_apply.wxss */
+/* pages/team/team.wxss */
+.weui-form-preview{
+    margin-bottom: 25px;
+}
+

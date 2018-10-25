@@ -37,8 +37,6 @@
             </view-->
               
         </view>
-        <navigator url="../personform/personform">
-          <button class="btn" bindtap="participation">应聘</button>
-        </navigator>       
-          <button class="btn" bindtap="attention">关注</button>
+      
+          <button class="btn" bindtap="attention">退出</button>
       </view>

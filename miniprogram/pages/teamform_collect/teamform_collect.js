@@ -1,4 +1,4 @@
-// pages/teamform/teamform.js
+// pages/teamform_collect/teamform_collect.js
 Page({
 
   /**

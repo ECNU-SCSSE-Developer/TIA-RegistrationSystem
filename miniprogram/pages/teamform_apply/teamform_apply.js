@@ -1,4 +1,4 @@
-// pages/teamform/teamform.js
+// pages/teamform_apply/teamform_apply.js
 Page({
 
   /**
