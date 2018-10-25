@@ -1,17 +1,90 @@
 //app.js
 App({
-  onLaunch: function () {
+  onLaunch: function() {
     // 展示本地存储能力
     var logs = wx.getStorageSync('logs') || []
     logs.unshift(Date.now())
     wx.setStorageSync('logs', logs)
 
-    // 登录
-    wx.login({
-      success: res => {
-        // 发送 res.code 到后台换取 openId, sessionKey, unionId
-      }
-    })
+
+    let sessionid = wx.getStorageSync('sessionid')
+    if (sessionid) {
+      //存有sessionid，判断登录态是否过期
+      wx.checkSession({
+        success: function(res) {
+          console.info("登录态未过期")
+          console.info("sessionid为: " + sessionid)
+        },
+        fail: function(res) {
+          console.info("登录态已过期")
+          //重新请求sessionid
+          wx.login({
+            success: res => {
+              var code = res.code;
+              console.log('获取用户登录凭证：' + code);
+              if (code) {
+
+                // --------- 发送凭证 ------------------
+                wx.request({
+                  url: 'http://scsse.cn/onLogin',
+                  data: {
+                    code: code
+                  },
+                  method: 'GET',
+                  success: function(res) {
+                    console.log(res.data.sessionid)
+                    wx.setStorageSync("sessionid", res.data.sessionid)
+                  },
+                  fail: function(err) {
+                    console.log("请求sessionid失败")
+                  }
+                })
+              } else {
+                console.log('获取code失败：' + res.errMsg);
+              }
+            }
+          })
+        }
+      })
+    } else {
+      //首次登录
+      wx.checkSession({
+        success: function (res) {
+          console.info("登录态未过期")
+        },
+        fail: function (res) {
+          console.info("登录态已过期")
+          //重新请求sessionid
+          wx.login({
+            success: res => {
+              var code = res.code;
+              console.log('获取用户登录凭证：' + code);
+              if (code) {
+
+                // --------- 发送凭证 ------------------
+                wx.request({
+                  url: 'http://scsse.cn/onLogin',
+                  data: {
+                    code: code
+                  },
+                  method: 'GET',
+                  success: function (res) {
+                    console.log("获取的sessionid为: " + res.data.sessionid)
+                    wx.setStorageSync("sessionid", res.data.sessionid)
+                  },
+                  fail: function (err) {
+                    console.log("请求sessionid失败")
+                  }
+                })
+              } else {
+                console.log('获取code失败：' + res.errMsg);
+              }
+            }
+          })
+        }
+      })
+    }
+
     // 获取用户信息
     wx.getSetting({
       success: res => {
