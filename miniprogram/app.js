@@ -21,12 +21,12 @@ App({
           wx.login({
             success: res => {
               var code = res.code;
-              console.log('获取用户登录凭证：' + code);
+              console.log('重新获取用户登录凭证：' + code);
               if (code) {
 
                 // --------- 发送凭证 ------------------
                 wx.request({
-                  url: 'http://scsse.cn/onLogin',
+                  url: 'https://scsse.cn/onLogin',
                   data: {
                     code: code
                   },
@@ -63,7 +63,7 @@ App({
 
                 // --------- 发送凭证 ------------------
                 wx.request({
-                  url: 'http://scsse.cn/onLogin',
+                  url: 'https://scsse.cn/onLogin',
                   data: {
                     code: code
                   },
