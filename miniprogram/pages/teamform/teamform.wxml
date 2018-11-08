@@ -1,2 +1,41 @@
 <!--pages/teamform/teamform.wxml-->
-<text>pages/teamform/teamform.wxml</text>
+<view class='form-title'>
+  <text>招聘信息</text>
+</view>
+
+<view class='input-area'>
+  <form bindsubmit="formSubmit">
+    <input name='name' type='text' placeholder='项目名称' confirm-type='next' focus='true'></input>
+
+    <radio-group class="radio-group" bindchange="radioChangeGender">
+      <label class="radio" wx:for="{{gender}}" wx:key="gender">
+        <radio value="{{item.name}}" color=" #09BB07" />{{item.value}}
+      </label>
+    </radio-group>
+
+     <input name='phone' type='number' placeholder='请输入电话' confirm-type='next' minlength='11' maxlength='11'></input>
+    <input name='email' type='text' placeholder='请输入邮箱' confirm-hold='next'></input>
+
+<view class="section">
+      <picker value='{{}}' range='{{array}}'>
+        <view class="picker">
+          招募位置：{{array[index]}}
+        </view>
+      </picker>
+    </view>
+
+<view class="content">
+项目简介：
+<textarea placeholder="请输入内容" />
+</view>
+
+<view class="content">
+招募要求：
+<textarea placeholder="请输入内容" />
+</view>
+   
+
+    
+    <button class="btn" >发布</button>
+  </form>
+</view>

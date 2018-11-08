@@ -1,12 +1,33 @@
-// pages/teamform/teamform.js
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-
+    array: ['软件工程', '计算机科学', '心理学', '设计', '教育', '经管'],
+    objectArray: [
+      {
+        id: 0,
+        name: '软件工程'
+      }, {
+        id: 1,
+        name: '计算机科学'
+      }, {
+        id: 2,
+        name: '心理学'
+      }, {
+        id: 3,
+        name: '设计'
+      }, {
+        id: 4,
+        name: '教育'
+      }, {
+        id: 5,
+        name: '经管'
+      }
+    ],
   },
+
 
   /**
    * 生命周期函数--监听页面加载
@@ -63,4 +84,5 @@ Page({
   onShareAppMessage: function () {
 
   }
+
 })
