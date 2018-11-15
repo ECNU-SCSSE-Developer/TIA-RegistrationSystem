@@ -36,16 +36,18 @@ Page({
   onLoad: function (options) {
     var that = this;
     wx.request({
-      url: 'http://scsse.cn/match/get/all',
-      data: {},
-      method: 'POST',
+      url: 'https://118.25.176.85/match',
+      data: {
+        "selectAll": 1
+      },
+      method: 'GET',
       header: {
         'content-type': 'application/json;charset=utf-8',
       },
       success: function (res) {
-        console.log('获得比赛列表：' + res.data.list);
+        console.log('获得比赛列表：' + res.data);
         that.setData({
-          match: res.data.list,
+          match: res.data,
         })
       },
       fail: function (res) {

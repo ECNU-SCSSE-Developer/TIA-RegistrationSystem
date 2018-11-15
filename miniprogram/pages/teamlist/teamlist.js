@@ -57,9 +57,9 @@ Page({
         'content-type': 'application/json;charset=utf-8',
       },
       success: function (res) {
-        console.log('获得招聘信息列表：' + res.data.list);
+        console.log('获得招聘信息列表：' + res.data);
         that.setData({
-          recruit: res.data.list,
+          recruit: res.data,
         })
       },
       fail: function (res) {
@@ -76,9 +76,9 @@ Page({
         'content-type': 'application/json;charset=utf-8',
       },
       success: function (res) {
-        console.log('获得比赛列表：' + res.data.list);
+        console.log('获得比赛列表：' + res.data);
         that.setData({
-          [matchFilter]: res.data.list,
+          [matchFilter]: res.data,
         })
       },
       fail: function (res) {
@@ -95,9 +95,9 @@ Page({
         'content-type': 'application/json;charset=utf-8',
       },
       success: function (res) {
-        console.log('获得比赛列表：' + res.data.list);
+        console.log('获得比赛列表：' + res.data);
         that.setData({
-          [jobFilter]: res.data.list,
+          [jobFilter]: res.data,
         })
       },
       fail: function (res) {

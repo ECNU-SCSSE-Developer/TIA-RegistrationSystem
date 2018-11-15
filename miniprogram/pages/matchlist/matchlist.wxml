@@ -1,7 +1,7 @@
 <view class="case">
 <view class='case-list'>
     <view class='case-item' wx:for="{{match}}" wx:key="match">
-    <navigator url="../match/match" class="weui-form-preview__btn weui-form-preview__btn_primary" hover-class="weui-form-preview__btn_active">
+    <navigator url="../match/match?id={{item.matchId}}" class="weui-form-preview__btn weui-form-preview__btn_primary" hover-class="weui-form-preview__btn_active">
     <image  class='case-item-image' src="{{item.image}}">
       </image>
 </navigator>

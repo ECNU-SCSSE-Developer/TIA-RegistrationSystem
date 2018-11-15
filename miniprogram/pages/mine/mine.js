@@ -10,8 +10,8 @@ Page({
     openid: "",
     name: "孙雨晶",
     major: "软件工程",
-    phone: "18917985620"
-
+    phone: "18917985620",
+    match: []
   },
 
   /**
@@ -55,17 +55,19 @@ Page({
 
 
     wx.request({
-      url: 'http://scsse.cn/user',
-      data: {},
+      url: 'https://118.25.176.85/user',
+      data: {
+        studentId: '10165101001'
+      },
       method: 'GET',
       header: {
         'content-type': 'application/json;charset=utf-8',
         'sessionid': wx.getStorageSync('sessionid')
       },
       success: function (res) {
-        console.log('personal info: ' + res.data.list);
+        console.log('personal info: ' + res.data);
         that.setData({
-          match: res.data.list,
+          match: res.data,
         })
       },
       fail: function (res) {

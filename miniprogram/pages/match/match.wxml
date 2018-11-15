@@ -5,7 +5,7 @@
                 <view class="weui-form-preview__item">
                 <view class="weui-form-preview__label">比赛名称
                 </view>
-                <view class="weui-form-preview__value_in-hd">智慧校园
+                <view class="weui-form-preview__value_in-hd">{{match.matchName}}
                 </view>
                 </view>
             </view>
@@ -14,7 +14,19 @@
                 <view class="weui-form-preview__item">
                     <view class="weui-form-preview__label">简介
                     </view>
-                    <view class="weui-form-preview__value">很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长的简介
+                    <view class="weui-form-preview__value">{{match.matchDescription}}
+                    </view>
+                     <view class="weui-form-preview__label">要求
+                    </view>
+                    <view class="weui-form-preview__value">{{match.matchRequirements}}
+                    </view>
+                     <view class="weui-form-preview__label">时间
+                    </view>
+                    <view class="weui-form-preview__value">{{match.time}}
+                    </view>
+                     <view class="weui-form-preview__label">地点
+                    </view>
+                    <view class="weui-form-preview__value">{{match.place}}
                     </view>
                 </view>
             </view>

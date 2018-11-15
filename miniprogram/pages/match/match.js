@@ -5,14 +5,39 @@ Page({
    * 页面的初始数据
    */
   data: {
-  
+  id:'',
+  match:[]
+
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-  
+    this.setData({
+      id: options.id
+    })
+    
+    var that = this;
+    wx.request({
+      url: 'https://118.25.176.85/match',
+      data: {
+        "matchId": that.data.id
+      },
+      method: 'GET',
+      header: {
+        'content-type': 'application/json;charset=utf-8',
+      },
+      success: function (res) {
+        console.log('获得比赛信息：' + res.data);
+        that.setData({
+          match: res.data,
+        })
+      },
+      fail: function (res) {
+        console.log("Sorry,please try again!")
+      }
+    })
   },
 
   /**

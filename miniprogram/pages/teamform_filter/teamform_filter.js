@@ -5,14 +5,35 @@ Page({
    * 页面的初始数据
    */
   data: {
-
+team: []
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+    
+    var that = this;
+    wx.request({
+      url: 'https://118.25.176.85/recruit',
+      data: {
+        "selectAll": 1
+      },
+      method: 'GET',
+      header: {
+        'content-type': 'application/json;charset=utf-8',
+        'sessionid': wx.getStorageSync('sessionid')
+      },
+      success: function (res) {
+        console.log('personal info: ' + res.data);
+        that.setData({
+          match: res.data,
+        })
+      },
+      fail: function (res) {
+        console.log("Sorry,please try again!")
+      }
+    })
   },
 
   /**

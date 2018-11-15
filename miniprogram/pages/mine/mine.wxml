@@ -22,9 +22,9 @@
           </view>
           <view class="weui-media-box__bd weui-media-box__bd_in-appmsg">
             <view class="weui-media-box__title">{{userInfo.nickName}}</view>
-            <view class="weui-media-box__desc">{{name}}</view>
-            <view class="weui-media-box__desc">{{major}}</view>
-            <view class="weui-media-box__desc">{{phone}}</view>
+            <view class="weui-media-box__desc">{{match.studentName}}</view>
+            <view class="weui-media-box__desc">{{match.major}}</view>
+            <view class="weui-media-box__desc">{{match.contacts}}</view>
           </view>
         </navigator>
       </view>
