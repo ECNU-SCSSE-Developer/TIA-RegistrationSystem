@@ -42,12 +42,7 @@
     <view class="weui-cell__ft weui-cell__ft_in-access"></view>
   </navigator>
   </view>
-  <view class="item">
-   <navigator url="../teamlist_apply/teamlist_apply" class="weui-cell weui-cell_access" hover-class="weui-cell_active">
-    <view class="weui-cell__bd">我申请的队伍</view>
-    <view class="weui-cell__ft weui-cell__ft_in-access"></view>
-  </navigator> 
-  </view>
+
   <view class="item">
  <navigator url="../teamlist_join/teamlist_join" class="weui-cell weui-cell_access" hover-class="weui-cell_active">
     <view class="weui-cell__bd">我加入的队伍</view>
