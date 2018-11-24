@@ -2,3 +2,40 @@
 .weui-form-preview{
     margin-bottom: 25px;
 }
+.weui-form-preview__value
+{
+  text-align: left;
+}
+.circle
+{
+  border-radius: 30rpx;
+  box-shadow: 2rpx 2rpx 2rpx 2rpx rgb(112, 110, 110);
+  width: 90%;
+  height: 50px;
+
+  margin: 50rpx auto;
+}
+.circle1
+{
+  border-radius: 30rpx;
+  box-shadow: 2rpx 2rpx 2rpx 2rpx rgb(112, 110, 110);
+  margin: 50rpx auto;
+  width: 90%;
+}
+
+.weui-form-preview{
+  position: static;
+}
+.weui-form-preview__hd{
+  position: static;
+  padding: 0 15px;
+}
+.weui-form-preview__label{
+  line-height: 50px;
+}
+.weui-form-preview__bd{
+  padding: 0 15px;
+}
+.weui-form-preview__value{
+  line-height: 50px;
+}
