@@ -94,3 +94,17 @@
   color: white;
 }
 
+.item{
+  border-radius: 30rpx;
+  box-shadow: 2rpx 2rpx 2rpx 2rpx rgb(112, 110, 110);
+}
+.weui-panel__hd1{
+padding:14px 15px 10px;
+color:#999;
+font-size:13px;
+}
+.weui-panel1{
+  background-color:#fff;
+margin-top:10px;
+overflow:hidden;
+}

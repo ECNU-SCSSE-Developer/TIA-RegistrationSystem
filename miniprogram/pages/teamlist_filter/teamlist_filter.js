@@ -58,7 +58,7 @@ Page({
         "match": "智慧校园"
       }]
     },
-    match:{}
+    team:{}
   },
 
   /**
@@ -79,7 +79,7 @@ Page({
       success: function (res) {
         console.log('personal info: ' + res.data);
         that.setData({
-          match: res.data,
+          team: res.data,
         })
       },
       fail: function (res) {

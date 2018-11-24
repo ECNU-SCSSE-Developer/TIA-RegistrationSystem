@@ -1,4 +1,3 @@
-
 <!--pages/matchlist/matchlist.wxml-->
 <view class='pages'>
   <!--view class='case-head'>
@@ -8,7 +7,7 @@
     <text class='case-head-point'>·</text>
     <view class='case-head-line'></view>
   </view-->
-  <dropdownmenu dropDownMenuTitle='{{dropDownMenuTitle}}' dropDownMenuFourthData='{{dropDownMenuFourthData}}' dropDownMenuFirstData='{{dropDownMenuFirstData}}' dropDownMenuSecondData='{{dropDownMenuSecondData}}' dropDownMenuThirdData='{{dropDownMenuThirdData}}'
+  <dropdownmenu class="item" dropDownMenuTitle='{{dropDownMenuTitle}}' dropDownMenuFourthData='{{dropDownMenuFourthData}}' dropDownMenuFirstData='{{dropDownMenuFirstData}}' dropDownMenuSecondData='{{dropDownMenuSecondData}}' dropDownMenuThirdData='{{dropDownMenuThirdData}}'
     bind:selectedItem='selectedFourth' />
   <!--view class="weui-cells weui-cells_after-title">
     <navigator url="../mine/mine/学生信息" class="weui-cell weui-cell_access" hover-class="weui-cell_active">
@@ -23,17 +22,20 @@
 
 
 
-  <view class="weui-panel">
-    <view class="weui-panel__hd">
+  <view class="weui-panel1">
+
+    <view class="weui-panel__hd1" wx:for="{{team}}" wx:key="{{team}}">
       <!--navigator wx:for="{{team.data}}" wx:key="{{team.data}}" url="../../team/team?objectId={{item.objectId}}" class="weui-media-box weui-media-box_appmsg" hover-class="weui-cell_active" id="{{item.id}}"-->
-     
-      <navigator wx:for="{{match}}" wx:key="{{match}}" url="../teamform_filter/teamform_filter" class="weui-media-box weui-media-box_appmsg" hover-class="weui-cell_active" >
-        <view class="weui-media-box__bd weui-media-box__bd_in-appmsg">
-          <view class="weui-media-box__title">{{item.recruitName}}</view>
-          <view class="weui-media-box__desc">待招{{item.willingNumber}}人</view>
-          <view class="weui-media-box__state">{{item.matchName}}</view>
-        </view>
+      <view class="item">
+        <navigator url="../teamform_filter/teamform_filter?id={{item.recruitId}}" class="weui-media-box weui-media-box_appmsg" hover-class="weui-cell_active">
+          <view class="weui-media-box__bd weui-media-box__bd_in-appmsg">
+            <view class="weui-media-box__title">{{item.recruitName}}</view>
+            <view class="weui-media-box__desc">待招{{item.willingNumber-item.registeredNumber}}人</view>
+            <view class="weui-media-box__state">{{item.matchName}}</view>
+          </view>
+      
       </navigator>
+</view>
     </view>
   </view>
 
