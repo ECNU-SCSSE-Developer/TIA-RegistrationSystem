@@ -25,6 +25,13 @@
   background-color: #09BB07;
   color: #ffffff
 }
+.content{
+border:solid 1px #638AF2;
+margin-top: 20px;
+margin-bottom: 20px;
+font-size: 12pt;
+padding: 3px;
+}
 
 
 
