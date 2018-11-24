@@ -11,28 +11,32 @@
       </label>
     </radio-group>
 
-    <input name='number' type='text' placeholder='请输入学号' confirm-type='next'></input>
+    <input name='num' type='number' placeholder='请输入学号' confirm-type='next'></input>
     <input name='phone' type='number' placeholder='请输入电话' confirm-type='next' minlength='11' maxlength='11'></input>
     <input name='email' type='text' placeholder='请输入邮箱' confirm-hold='next'></input>
+     <view class="content">
+    个人特长：
+    <textarea name='skill' type='text' confirm-hold='next' placeholder='请输入个人特长'></textarea>
+    </view>
 
     <view class="section">
       <view class="section__title">专业</view>
-      <picker value='{{}}' range='{{array1}}'>
+      <picker bindchange="bindCasePickerChange_major" value='{{index1}}' range='{{array1}}'>
         <view class="picker">
-          当前选择：{{array1[index]}}
+          当前选择：{{array1[index1]}}
         </view>
       </picker>
     </view>
 
     <view class="section">
       <view class="section__title">年级</view>
-      <picker value='{{}}' range='{{array2}}'>
+      <picker bindchange="bindCasePickerChange_year" value='{{index2}}' range='{{array2}}'>
         <view class="picker">
-          当前选择：{{array2[index]}}
+          当前选择：{{array2[index2]}}
         </view>
       </picker>
     </view>
-        
-    <button class="btn" formType="submit">提交</button>
+
+    <button class="btn" formType="submit" >提交</button>
   </form>
 </view>
