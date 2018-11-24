@@ -38,4 +38,10 @@
 }
 .weui-form-preview__value{
   line-height: 50px;
+  font-size: 15px;
+}
+.weui-form-preview__value_in-hd{
+  text-align: center;
+  font-size: 25px;
+  line-height: 50px;
 }

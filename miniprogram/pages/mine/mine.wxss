@@ -1,1 +1,11 @@
 /* pages/mine/mine.wxss */
+.item{
+  border-radius: 10rpx;
+  box-shadow: 1rpx 1rpx 1rpx 1rpx rgb(112, 110, 110);
+  margin: 10px auto;
+  padding: 0;
+  width: 95%;
+}
+.weui-cells{
+  position: static;
+}
