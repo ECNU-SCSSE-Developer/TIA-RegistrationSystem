@@ -12,6 +12,26 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
+    wx.request({
+      url: 'https://scsse.me/tia/focused',
+      data: {
+        "studentId": wx.getStorageSync('sessionid')
+      },
+      method: 'GET',
+      header: {
+        'content-type': 'application/json;charset=utf-8',
+        'sessionid': wx.getStorageSync('sessionid')
+      },
+      success: function (res) {
+        console.log('personal info: ' + res.data);
+        that.setData({
+          match: res.data,
+        })
+      },
+      fail: function (res) {
+        console.log("Sorry,please try again!")
+      }
+    })
 
   },
 

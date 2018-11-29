@@ -36,7 +36,7 @@ Page({
   onLoad: function (options) {
     var that = this;
     wx.request({
-      url: 'https://118.25.176.85/match',
+      url: 'https://scsse.me/tia/match',
       data: {
         "selectAll": 1
     
@@ -44,7 +44,11 @@ Page({
       method: 'GET',
       header: {
         'content-type': 'application/json;charset=utf-8',
+<<<<<<< HEAD
         "sessionId": 0
+=======
+        'sessionid': wx.getStorageSync('sessionid')
+>>>>>>> a3fcaac4b061e7c577faf0d4df83d998c8dd9f60
       },
       success: function (res) {
         console.log('获得比赛列表：' + res.data);

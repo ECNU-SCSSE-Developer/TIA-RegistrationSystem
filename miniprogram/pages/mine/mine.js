@@ -55,7 +55,7 @@ Page({
 
 
     wx.request({
-      url: 'https://118.25.176.85/user',
+      url: 'https://scsse.me/tia/user',
       data: {
         studentId: '10165101001'
       },

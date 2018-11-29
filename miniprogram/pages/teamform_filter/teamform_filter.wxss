@@ -8,23 +8,25 @@
 }
 .circle
 {
-  border-radius: 30rpx;
-  box-shadow: 2rpx 2rpx 2rpx 2rpx rgb(112, 110, 110);
+  border-radius: 20rpx;
+  box-shadow: 2rpx 2rpx 2rpx 2rpx rgb(161, 161, 161);
   width: 90%;
   height: 50px;
-
   margin: 50rpx auto;
+  background-color: white;
 }
 .circle1
 {
   border-radius: 30rpx;
-  box-shadow: 2rpx 2rpx 2rpx 2rpx rgb(112, 110, 110);
+  box-shadow: 2rpx 2rpx 2rpx 2rpx rgb(161, 161, 161);
   margin: 50rpx auto;
   width: 90%;
+ background-color: white;
 }
 
 .weui-form-preview{
   position: static;
+  background-color: rgb(239, 239, 244);
 }
 .weui-form-preview__hd{
   position: static;
@@ -32,10 +34,28 @@
 }
 .weui-form-preview__label{
   line-height: 50px;
+  font-size: 15px;
 }
 .weui-form-preview__bd{
   padding: 0 15px;
 }
 .weui-form-preview__value{
   line-height: 50px;
+  font-size: 15px;
+
+}
+.weui-form-preview__value_in-hd{
+  text-align:left;
+  font-weight: normal;
+  font-size: 20px;
+  line-height: 50px;
+  color: rgb(53, 53, 53);
+}
+.btn{
+background-color: rgb(116, 185, 255);
+}
+page{
+  display: block;
+  height: 100%;
+  background-color: rgb(239, 239, 244);
 }

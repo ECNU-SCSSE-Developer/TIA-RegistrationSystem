@@ -67,7 +67,7 @@ Page({
   onLoad: function (options) {
     var that = this;
     wx.request({
-      url: 'https://118.25.176.85/recruit',
+      url: 'https://scsse.me/tia/recruit',
       data: {
         "selectAll" : 1
       },

@@ -31,9 +31,9 @@ Page({
    */
   onLoad: function (options) {
     wx.request({
-      url: 'https://118.25.176.85/recruit',
+      url: 'https://scsse.me/tia/focused',
       data: {
-        "selectAll": 1
+        "studentId": wx.getStorageSync('sessionid')
       },
       method: 'GET',
       header: {
