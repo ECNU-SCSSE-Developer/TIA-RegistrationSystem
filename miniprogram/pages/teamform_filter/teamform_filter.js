@@ -91,10 +91,10 @@ Page({
       }
     })
   },
-  /*attention:function(){
+  attention:function(){
     var that = this;
     wx.request({
-      url: 'https://118.25.176.85/user/focused',
+      url: 'https://scsse.me/tia/user/focused',
       data: {
         "studentId": wx.getStorageSync('sessionid'),
         "recruitId": that.data.team.recruitId
@@ -114,7 +114,7 @@ Page({
         console.log("Sorry,please try again!")
       }
     })
-  },*/
+  },
   /**
    * 生命周期函数--监听页面初次渲染完成
    */
