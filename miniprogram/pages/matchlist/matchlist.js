@@ -44,11 +44,7 @@ Page({
       method: 'GET',
       header: {
         'content-type': 'application/json;charset=utf-8',
-<<<<<<< HEAD
-        "sessionId": 0
-=======
         'sessionid': wx.getStorageSync('sessionid')
->>>>>>> a3fcaac4b061e7c577faf0d4df83d998c8dd9f60
       },
       success: function (res) {
         console.log('获得比赛列表：' + res.data);

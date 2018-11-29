@@ -92,7 +92,7 @@ Page({
 
   else{
       wx.request({
-        url: 'https://118.25.176.85/recruit',
+        url: 'https://scsse.me/tia/recruit',
         method: 'POST',
         header: {
           'content-type': 'application/x-www-form-urlencoded',
