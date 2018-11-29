@@ -21,7 +21,7 @@ Page({
     })
     var that = this;
     wx.request({
-      url: 'https://118.25.176.85/recruit',
+      url: 'https://scsse.me/tia/recruit',
       data: {
         "recruitId": that.data.id
       },
@@ -36,7 +36,7 @@ Page({
           team: res.data,
         })
         wx.request({
-          url: 'https://118.25.176.85/user',
+          url: 'https://scsse.me/tia/user',
           data: {
             "studentId": that.data.team.studentId
           },
@@ -52,7 +52,7 @@ Page({
             })
           },
           fail: function(res) {
-            console.log("Sorry,please try again!")
+            console.log("Sorry,getting leader's name failed,please try again!")
           }
         })
       },
@@ -61,7 +61,7 @@ Page({
       }
     })
     wx.request({
-      url: 'https://118.25.176.85/user/focused',
+      url: 'https://scsse.me/tia/user/focused',
       data: {
         "studentId": wx.getStorageSync('sessionid'),
       },
