@@ -1,6 +1,7 @@
 var major = 0;
 var year = 0;
-Page({
+Page
+({
   /**
    * 页面的初始数据
    */

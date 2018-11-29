@@ -39,10 +39,12 @@ Page({
       url: 'https://118.25.176.85/match',
       data: {
         "selectAll": 1
+    
       },
       method: 'GET',
       header: {
         'content-type': 'application/json;charset=utf-8',
+        "sessionId": 0
       },
       success: function (res) {
         console.log('获得比赛列表：' + res.data);
