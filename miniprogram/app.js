@@ -26,7 +26,7 @@ App({
 
                 // --------- 发送凭证 ------------------
                 wx.request({
-                  url: 'https://scsse.cn/onLogin',
+                  url: 'https://scsse.me/tia/onLogin',
                   data: {
                     code: code
                   },
@@ -63,7 +63,7 @@ App({
 
                 // --------- 发送凭证 ------------------
                 wx.request({
-                  url: 'https://scsse.cn/onLogin',
+                  url: 'https://scsse.me/tia/onLogin',
                   data: {
                     code: code
                   },

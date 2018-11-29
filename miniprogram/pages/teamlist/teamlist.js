@@ -50,7 +50,7 @@ Page({
   onLoad: function (options) {
     var that = this;
     wx.request({
-      url: 'http://scsse.cn/recruit/get/all',
+      url: 'http://scsse.me/tia/recruit/get/all',
       data: {},
       method: 'POST',
       header: {
@@ -69,7 +69,7 @@ Page({
 
     var matchFilter = 'dropDownMenuFirstData[0].childModel';
     wx.request({
-      url: 'http://scsse.cn/match/get/all',
+      url: 'http://scsse.me/tia/match/get/all',
       data: {},
       method: 'POST',
       header: {
@@ -88,7 +88,7 @@ Page({
 
     var jobFilter = 'dropDownMenuFirstData[1].childModel';
     wx.request({
-      url: 'http://scsse.cn/match/get/all',
+      url: 'http://scsse.me/tia/match/get/all',
       data: {},
       method: 'POST',
       header: {
