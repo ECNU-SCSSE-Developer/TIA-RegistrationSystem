@@ -1,6 +1,5 @@
 // pages/matchlist/matchlist.js
 Page({
-
   /**
    * 页面的初始数据
    */

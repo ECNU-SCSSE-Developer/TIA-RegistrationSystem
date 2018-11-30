@@ -31,7 +31,7 @@ Page({
    */
   onLoad: function (options) {
     wx.request({
-      url: 'https://scsse.me/tia/registered',
+      url: 'https://scsse.me/tia/user/registered',
       data: {
         "studentId": wx.getStorageSync('sessionid')
       },
@@ -43,7 +43,7 @@ Page({
       success: function (res) {
         console.log('personal info: ' + res.data);
         that.setData({
-          match: res.data,
+          recruit: res.data,
         })
       },
       fail: function (res) {

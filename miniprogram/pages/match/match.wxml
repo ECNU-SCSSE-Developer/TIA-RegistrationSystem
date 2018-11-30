@@ -33,9 +33,9 @@
             <!--view class="weui-form-preview__ft">
                 <navigator url="../team/team" class="weui-form-preview__btn weui-form-preview__btn_primary" hover-class="weui-form-preview__btn_active">查看组队列表
                 </navigator>
-            </view-->
+            </view--> 
         </view>
-        <navigator url="../teamform/teamform">
+        <navigator url="../teamform/teamform?id={{matchid}}">
           <button class="btn" bindtap="join">发布招聘</button>        
         </navigator>
 
