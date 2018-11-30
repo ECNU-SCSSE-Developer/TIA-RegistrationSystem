@@ -47,7 +47,10 @@
       </view>
     </view>
     <navigator url="../personform/personform">
-      <button class="btn" bindtap="participation">应聘</button>
+      <button class="btn" bindtap="participation">
+   {{apply}} 
+  </button>
+   
     </navigator>
     <button class="btn" bindtap="attention">{{focused}}</button>
   </view>

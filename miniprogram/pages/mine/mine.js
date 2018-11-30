@@ -67,7 +67,7 @@ Page({
       success: function (res) {
         console.log('personal info: ' + res.data);
         that.setData({
-          match: res.data,
+          man: res.data,
         })
       },
       fail: function (res) {

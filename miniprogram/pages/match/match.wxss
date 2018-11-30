@@ -2,3 +2,16 @@
 .weui-form-preview{
     margin-bottom: 25px;
 }
+.weui-form-preview__value{
+  text-align: left;
+  font-size:17px;
+  line-height: 2em;
+  color: black;
+}
+.weui-form-preview__value_in-hd{
+  font-size: 21px;
+}
+.weui-form-preview{
+  border-radius: 20px;
+  position: static;
+}

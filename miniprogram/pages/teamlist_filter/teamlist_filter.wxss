@@ -96,10 +96,11 @@
 
 .item{
   border-radius: 30rpx;
+  background-color: white;
 }
 .weui-panel__hd1{
 padding:14px 15px 10px;
-background-color: #636363;
+background-color: #F8F8F8;
 font-size:13px;
 }
 .weui-panel1{

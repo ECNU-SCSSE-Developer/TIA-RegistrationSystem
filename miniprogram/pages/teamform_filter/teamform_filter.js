@@ -9,7 +9,8 @@ Page({
     team: [],
     student: [],
     apply:'',
-    focused:''
+    focused:'',
+    apply:'应       聘'
   },
 
   /**

@@ -1,11 +1,25 @@
 /* pages/mine/mine.wxss */
 .item{
-  border-radius: 10rpx;
-  box-shadow: 1rpx 1rpx 1rpx 1rpx rgb(112, 110, 110);
   margin: 10px auto;
   padding: 0;
   width: 95%;
+
 }
-.weui-cells{
-  position: static;
+.weui-media-box__desc__name{
+  font-size: 17px;
+  color: black;
+}
+.weui-media-box__hd_in-appmsg{
+
+}
+.weui-media-box__bd_in-appmsg{
+  top:30%;
+}
+.weui-panel{
+  display: block;
+
+}
+.weui-media-box_appmsg{
+  display: block;
+  align-items: center;
 }
