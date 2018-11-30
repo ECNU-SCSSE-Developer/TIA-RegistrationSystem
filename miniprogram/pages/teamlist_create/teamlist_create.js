@@ -35,7 +35,7 @@ Page({
     wx.request({
       url: 'https://scsse.me/tia/user/created',
       data:{
-        'studentId': that.data.id,
+        'studentId': id,
       },
       method: 'GET',
       header: {

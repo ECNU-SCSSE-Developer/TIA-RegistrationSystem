@@ -30,10 +30,11 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
+    var that = this;
     wx.request({
       url: 'https://scsse.me/tia/user/registered',
       data: {
-        "studentId": wx.getStorageSync('sessionid')
+        "studentId": wx.getStorageSync('studentId')
       },
       method: 'GET',
       header: {
