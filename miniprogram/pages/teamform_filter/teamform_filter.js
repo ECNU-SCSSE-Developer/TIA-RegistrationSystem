@@ -64,7 +64,7 @@ Page({
     wx.request({
       url: 'https://scsse.me/tia/user/focused',
       data: {
-        "studentId": wx.getStorageSync('sessionid'),
+        "studentId": wx.getStorageSync('studentId'),
       },
       method: 'GET',
       header: {
@@ -97,7 +97,7 @@ Page({
     wx.request({
       url: 'https://scsse.me/tia/user/focused',
       data: {
-        "studentId": wx.getStorageSync('sessionid'),
+        "studentId": wx.getStorageSync('studentId'),
         "recruitId": that.data.team.recruitId
       },
       method: 'PUT',

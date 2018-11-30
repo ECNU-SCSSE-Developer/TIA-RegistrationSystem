@@ -19,7 +19,7 @@ Page({
       wx.request({
           url: 'https://scsse.me/tia/recruitment/recruit',
           data: {
-            "studentId": wx.getStorageSync('sessionid'),
+            "studentId": wx.getStorageSync('studentId'),
             "recruitId": id,
             "selectall": 0,
           },
