@@ -38,6 +38,31 @@ Page({
         }
       })
   },
+  participation :function(){
+    var that = this;
+    wx.request({
+      url: 'https://scsse.me/tia/user/focused',
+      method:'PUT',
+      data:{
+        "studentId": wx.getStorageSync('sessionid'),
+        "recruitId":that.id,
+      },
+      header: {
+        'content-type': 'application/json;charset=utf-8',
+        'sessionid': wx.getStorageSync('sessionid')
+      },
+      success: function () {
+        console.log('personal info: ' + res.data);
+        wx.navigateTo({
+          url: '../teamlist_collect/teamlist_collect',
+        })
+      },
+      fail: function (res) {
+        console.log("Sorry,please try again!")
+      }
+    })
+
+  },
 
 
   /**
