@@ -201,6 +201,9 @@ Page
         url: 'https://scsse.me/tia/user',
         method: 'POST',
         header: {
+
+          'content-type': 'application/x-www-form-urlencoded',
+
           'sessionid': wx.getStorageSync('sessionid')
         },
         data: {
