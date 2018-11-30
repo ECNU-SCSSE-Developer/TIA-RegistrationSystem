@@ -5,7 +5,7 @@ Page({
    * 页面的初始数据
    */
   data: {
-    team: {
+    /*team: {
       "data": [{
         "id": 0,
         "name": "scsse",
@@ -22,7 +22,7 @@ Page({
         "number": "待招1人",
         "match": "智慧校园"
       }]
-    }
+    }*/
 
   },
 
@@ -31,7 +31,7 @@ Page({
    */
   onLoad: function (options) {
     wx.request({
-      url: 'https://scsse.me/tia/focused',
+      url: 'https://scsse.me/tia/user/focused',
       data: {
         "studentId": wx.getStorageSync('sessionid')
       },
@@ -43,7 +43,7 @@ Page({
       success: function (res) {
         console.log('personal info: ' + res.data);
         that.setData({
-          match: res.data,
+          team: res.data,
         })
       },
       fail: function (res) {

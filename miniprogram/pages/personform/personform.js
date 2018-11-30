@@ -1,5 +1,7 @@
 var major = 0;
 var year = 0;
+var index1 = 0;
+var index2 = 0;
 Page
 ({
   /**
@@ -7,7 +9,7 @@ Page
    */
   data: {
     array1: ['请选择专业', '软件工程', '计算机科学', '心理学', '设计', '教育', '经管'],
-    index1: 0,
+    index_major:0,
     objectArray1: [{
       id: 0,
       name: '软件工程'
@@ -27,9 +29,8 @@ Page
       id: 5,
       name: '经管'
     }],
-
     array2: ['请选择年级', '大一', '大二', '大三', '大四', '研一', '研二', '研三', '博士生'],
-    index2: 0,
+    index_year: 0,
     objectArray2: [{
       id: 0,
       name: '大一'
@@ -58,117 +59,85 @@ Page
   },
   bindCasePickerChange_major: function(e) {
     if (e.detail.value == 6) {
-      major = this.data.array1[6];
-      this.setData({
-        index1: e.detail.value
-      })
+      major = this.data.objectArray1[6].name;
+      index1 = this.data.objectArray1[6].id;
     }
     if (e.detail.value == 5) {
-      major = this.data.array1[5];
-      this.setData({
-        index1: e.detail.value
-      })
+      major = this.data.objectArray1[5].name;
+      index1 = this.data.objectArray1[5].id;
     }
     if (e.detail.value == 4) {
-      major = this.data.array1[4];
-      this.setData({
-        index1: e.detail.value
-      })
+      major = this.data.objectArray1[4].name;
+      index1 = this.data.objectArray1[4].id;
     }
     if (e.detail.value == 3) {
-      major = this.data.array1[3];
-      this.setData({
-        index1: e.detail.value
-      })
+      major = this.data.objectArray1[3].name;
+      index1 = this.data.objectArray1[3].id;
     }
     if (e.detail.value == 2) {
-      major = this.data.array1[2];
-      this.setData({
-        index1: e.detail.value
-      })
+      major = this.data.objectArray1[2].name;
+      index1 = this.data.objectArray1[2].id;
     }
     if (e.detail.value == 1) {
-      major = this.data.array1[1];
-      this.setData({
-        index1: e.detail.value
-      })
+      major = this.data.objectArray1[1].name;
+      index1 = this.data.objectArray1[1].id;
     }
     if (e.detail.value == 0) {
-      major = this.data.array1[0];
-      this.setData({
-        index1: e.detail.value
-      })
+      major = this.data.objectArray1[0].name;
+      index1 = this.data.objectArray1[0].id;
     }
+    this.setData({
+      index_major: e.detail.value
+    })
+
   },
   bindCasePickerChange_year: function(e) {
     if (e.detail.value == 9) {
-      year = this.data.array2[9];
-      this.setData({
-        index2: e.detail.value
-      })
+      year = this.data.objectArray2[9].name;
+      index2 = this.data.objectArray2[9].id;
     }
     if (e.detail.value == 8) {
-      year = this.data.array2[8];
-      this.setData({
-        index2: e.detail.value
-      })
+      year = this.data.objectArray2[8].name;
+      index2 = this.data.objectArray2[8].id;
     }
     if (e.detail.value == 7) {
-      year = this.data.array2[7];
-      this.setData({
-        index2: e.detail.value
-      })
+      year = this.data.objectArray2[7].name;
+      index2 = this.data.objectArray2[7].id;
     }
     if (e.detail.value == 6) {
-      year = this.data.array2[6];
-      this.setData({
-        index2: e.detail.value
-      })
+      year = this.data.objectArray2[6].name;
+      index2 = this.data.objectArray2[6].id;
     }
     if (e.detail.value == 5) {
-      year = this.data.array2[5];
-      this.setData({
-        index2: e.detail.value
-      })
-    }
-    if (e.detail.value == 5) {
-      year = this.data.array2[5];
-      this.setData({
-        index2: e.detail.value
-      })
+      year = this.data.objectArray2[5].name;
+      index2 = this.data.objectArray2[5].id;
     }
     if (e.detail.value == 4) {
-      year = this.data.array2[4];
-      this.setData({
-        index2: e.detail.value
-      })
+      year = this.data.objectArray2[4].name;
+      index2 = this.data.objectArray2[4].id;
     }
     if (e.detail.value == 3) {
-      year = this.data.array2[3];
-      this.setData({
-        index2: e.detail.value
-      })
+      year = this.data.objectArray2[3].name;
+      index2 = this.data.objectArray2[3].id;
     }
     if (e.detail.value == 2) {
-      year = this.data.array2[2];
-      this.setData({
-        index2: e.detail.value
-      })
+      year = this.data.objectArray2[2].name;
+      index2 = this.data.objectArray2[2].id;
     }
     if (e.detail.value == 1) {
-      year = this.data.array2[1];
-      this.setData({
-        index2: e.detail.value
-      })
+      year = this.data.objectArray2[1].name;
+      index2 = this.data.objectArray2[1].id;
     }
     if (e.detail.value == 0) {
-      year = this.data.array2[0];
-      this.setData({
-        index2: e.detail.value
-      })
+      year = this.data.objectArray2[0].name;
+      index2 = this.data.objectArray2[0].id;
     }
+    this.setData({
+      index_year: e.detail.value
+    })
   },
   formSubmit: function(e) {
+    var that = this;
     let {
       name,
       num,
@@ -176,8 +145,8 @@ Page
       email,
       skill
     } = e.detail.value;
-    let mymajor = major;
-    let myyear = year;
+    let mymajor = index1;
+    let myyear = index2;
     if (e.detail.value.name.length == 0) {
       wx.showModal({
         content: "姓名不能为空！",
@@ -232,7 +201,9 @@ Page
         url: 'https://scsse.me/tia/user',
         method: 'POST',
         header: {
+
           'content-type': 'application/x-www-form-urlencoded',
+
           'sessionid': wx.getStorageSync('sessionid')
         },
         data: {
@@ -242,6 +213,10 @@ Page
           major: mymajor,
           contacts: phone + ';' + email,
           specialty: skill,
+          openId: '123',
+        },
+        success: function(){
+          wx.setStorageSync("studentId", that.num);
         }
       })
     }

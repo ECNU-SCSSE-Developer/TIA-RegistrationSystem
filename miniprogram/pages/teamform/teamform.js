@@ -38,7 +38,19 @@ Page({
       })
     }
   },
-  */
+  */ 
+  data: {
+    id:'',
+  },
+
+  /**
+ * 生命周期函数--监听页面加载
+ */
+  onLoad: function (options) {
+    this.setData({
+      id:options.id
+    })
+  },
   formSubmit: function (e) {
     let {
       name,
@@ -56,41 +68,41 @@ Page({
         confirmText: "好的",
       });
     }
-   else if (e.detail.value.num.length == 0) {
+    else if (e.detail.value.num.length == 0) {
       wx.showModal({
         content: "请填写学号信息！",
         showCancel: false,
         confirmColor: "#557d8a",
         confirmText: "好的",
       });
-   }
-/*  else if (e.myposition == 0) {
-      wx.showModal({
-        content: "请选择招募位置！",
-        showCancel: false,
-        confirmColor: "#557d8a",
-        confirmText: "好的",
-      })
-     }
-  */
-  else if (e.detail.value.description.length == 0) {
+    }
+    /*  else if (e.myposition == 0) {
+          wx.showModal({
+            content: "请选择招募位置！",
+            showCancel: false,
+            confirmColor: "#557d8a",
+            confirmText: "好的",
+          })
+         }
+      */
+    else if (e.detail.value.description.length == 0) {
       wx.showModal({
         content: "请填写项目简介！",
         showCancel: false,
         confirmColor: "#557d8a",
         confirmText: "好的",
       });
-     }
-  else if (e.detail.value.requirements.length == 0) {
+    }
+    else if (e.detail.value.requirements.length == 0) {
       wx.showModal({
         content: "请填写招募要求！",
         showCancel: false,
         confirmColor: "#557d8a",
         confirmText: "好的",
       });
-     }
+    }
 
-  else{
+    else {
       wx.request({
         url: 'https://scsse.me/tia/recruit',
         method: 'POST',
@@ -103,17 +115,11 @@ Page({
           recruitName: name,
           recruitDescription: description,
           recruitRequirements: requirements,
+          matchId:this.data.id,
         }
       })
     }
   },
-  /**
- * 生命周期函数--监听页面加载
- */
-  onLoad: function (options) {
-
-  },
-
   /**
    * 生命周期函数--监听页面初次渲染完成
    */

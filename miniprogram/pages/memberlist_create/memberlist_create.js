@@ -1,9 +1,10 @@
 // pages/memberlist/memberlist.js
+
 Page({
   /**
    * 页面的初始数据
    */
-  data: {
+  data: {/*
     team: {
       "data": [{
         "id": 0,
@@ -24,7 +25,36 @@ Page({
         "phonenumber": "789",
         "state": "录用"
       }]
-    }
+    }*/
+  },
+  /**
+   * 生命期函数--监听页面加载
+   */
+  onLoad: function (options) {
+      var that = this;
+      this.setData({
+        id : options.data
+      })
+      wx.request({
+        url: 'https://scsse.me/tia/recruitment/recruit/applicants',
+        data:{
+            "recruitId":id,
+        },
+        method: 'GET',
+        header: {
+          'content-type': 'application/json;charset=utf-8',
+          'sessionid': wx.getStorageSync('sessionid')
+        },
+        success: function (res) {
+          console.log('获得比赛信息：' + res.data);
+          that.setData({
+            applicants: res.data,
+          });
+        },
+        fail: function (res) {
+          console.log("Sorry,please try again!")
+        }
+      })
   },
   openConfirm: function (e) {
     var id = e.currentTarget.dataset.name;
@@ -41,23 +71,39 @@ Page({
           that.setData({
             [state]: "录用"
           })
+          wx.request({
+            url: 'https://scsse.me/tia/recruitment/registered',
+            method: 'PUT',
+            header: {
+              'sessionid': wx.getStorageSync('sessionid')
+            },
+            data: {
+              studentId:that.studentId,
+              recruitId:that.recruitId,
+            },
+          })
           console.log('用户点击确认')
         } else {
           that.setData({
             [state]: '未录用'
           })
+          wx.request({
+            url: 'https://scsse.me/tia/recruitment/registered',
+            method: 'DELETE',
+            header: {
+              'sessionid': wx.getStorageSync('sessionid')
+            },
+            data: {
+              studentId: that.studentId,
+              recruitId: that.recruitId,
+            },
+          })
           console.log('用户点击取消')
         }
       }
-    });
-  },
-  /**
-   * 生命周期函数--监听页面加载
-   */
-  onLoad: function (options) {
-
-  },
-
+    })
+},
+  
   /**
    * 生命周期函数--监听页面初次渲染完成
    */

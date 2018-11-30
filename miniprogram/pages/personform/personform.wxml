@@ -23,7 +23,7 @@
       <view class="section__title">专业</view>
       <picker bindchange="bindCasePickerChange_major" value='{{index1}}' range='{{array1}}'>
         <view class="picker">
-          当前选择：{{array1[index1]}}
+          当前选择：{{array1[index_major]}}
         </view>
       </picker>
     </view>
@@ -32,7 +32,7 @@
       <view class="section__title">年级</view>
       <picker bindchange="bindCasePickerChange_year" value='{{index2}}' range='{{array2}}'>
         <view class="picker">
-          当前选择：{{array2[index2]}}
+          当前选择：{{array2[index_year]}}
         </view>
       </picker>
     </view>

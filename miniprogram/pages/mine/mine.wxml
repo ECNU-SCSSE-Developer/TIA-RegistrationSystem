@@ -24,8 +24,9 @@
 
 
 
+
 <view class="list">
-  <navigator url="../teamlist_create/teamlist_create" class="list_item" hover-class="weui-cell_active">
+  <navigator url="../teamlist_create/teamlist_create?id={{item.studentId}}" class="list_item" hover-class="weui-cell_active">
     <image class="list_item_img" src="{{userInfo.avatarUrl}}../../image/灯泡.png" />
     <view class="list_item_text">我创建的队伍</view>
     <view class="weui-cell__ft weui-cell__ft_in-access"></view>

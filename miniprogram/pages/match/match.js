@@ -5,7 +5,7 @@ Page({
    * 页面的初始数据
    */
   data: {
-  id:'',
+  matchid:'',
   match:[]
 
   },
@@ -17,7 +17,6 @@ Page({
     this.setData({
       id: options.id
     })
-    
     var that = this;
     wx.request({
       url: 'https://scsse.me/tia/match',

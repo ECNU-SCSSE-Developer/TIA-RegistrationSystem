@@ -4,31 +4,31 @@
             <view class="weui-form-preview__hd">
                 <view class="weui-form-preview__item">
                     <view class="weui-form-preview__label">队伍名称</view>
-                    <view class="weui-form-preview__value_in-hd">沙雕</view>
+                    <view class="weui-form-preview__value_in-hd">{{team.recruitName}}</view>
                 </view>
             </view>
             <view class="weui-form-preview__bd">
                 <view class="weui-form-preview__item">
                     <view class="weui-form-preview__label">队长</view>
-                    <view class="weui-form-preview__value">狗屎hcs</view>
+                    <view class="weui-form-preview__value">{{team.student.studentName}}</view>
                 </view>
                 
                 <view class="weui-form-preview__item">
                     <view class="weui-form-preview__label">需求</view>
-                    <view class="weui-form-preview__value">需求需求需求</view>
+                    <view class="weui-form-preview__value">{{team.recruitRequirements}}</view>
                 </view>
                 <view class="weui-form-preview__item">
                     <view class="weui-form-preview__label">简介</view>
-                    <view class="weui-form-preview__value">很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长的简介</view>
+                    <view class="weui-form-preview__value">{{team.recruitDescription}}</view>
                 </view>
            
             <view class="weui-form-preview__item">
                     <view class="weui-form-preview__label">联系方式</view>
-                    <view class="weui-form-preview__value">110</view>
+                    <view class="weui-form-preview__value">{{student.contacts}}</view>
                 </view>
                 <view class="weui-form-preview__item">
                     <view class="weui-form-preview__label">报名情况</view>
-                    <view class="weui-form-preview__value">1/1</view>
+                    <view class="weui-form-preview__value">{{team.registeredNumber}}/{{team.willingNumber}}</view>
                 </view>
                  </view>
             <!--view class="weui-form-preview__ft">
@@ -37,6 +37,12 @@
             </view-->
               
         </view>
-      
-          <button class="btn" bindtap="attention">退出</button>
+  <view class="item">
+    <button class="btn" bindtap="participation">返回
+      <navigator url="../teamlist_join/teamlist_join" class="weui-cell weui-cell_access" hover-class="weui-cell_active">
+        <view class="weui-cell__bd">我加入的队伍</view>
+        <view class="weui-cell__ft weui-cell__ft_in-access"></view>
+      </navigator>
+    </button>
+  </view>
       </view>
