@@ -34,20 +34,20 @@
     "list": [
       {
         "pagePath": "pages/teamlist_filter/teamlist_filter",
-        "iconPath": "image/组队.png",
-        "selectedIconPath": "image/组队.png",
+        "iconPath": "image/3.png",
+        "selectedIconPath": "image/3.png",
         "text": "组队"
       },
       {
         "pagePath":"pages/matchlist/matchlist",
-        "iconPath":"image/比赛.png",
-        "selectedIconPath":"image/比赛.png",
+        "iconPath":"image/1.png",
+        "selectedIconPath":"image/1.png",
         "text":"比赛"
       },
       {
         "pagePath": "pages/mine/mine",
-        "iconPath": "image/我的.png",
-        "selectedIconPath": "image/我的.png",
+        "iconPath": "image/2.png",
+        "selectedIconPath": "image/2.png",
         "text": "我的"
       }
     ]

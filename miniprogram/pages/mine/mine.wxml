@@ -15,9 +15,9 @@
     <view class="msgbox_in">
       <image class="msgbox_in_img" src="{{userInfo.avatarUrl}}../../image/match1.jpg" />
       <view class="msgbox_in_text_title">{{userInfo.nickName}}</view>
-      <view class="msgbox_in_text_title">卢宇博{{man.studentName}}</view>
-      <view class="msgbox_in_text_desc">软件工程{{man.major}}</view>
-      <view class="msgbox_in_text_desc">12313216546{{man.contacts}}</view>
+      <view class="msgbox_in_text_title">{{man.studentName}}</view>
+      <view class="msgbox_in_text_desc">{{man.major}}</view>
+      <view class="msgbox_in_text_desc">{{man.contacts}}</view>
     </view>
   </navigator>
 

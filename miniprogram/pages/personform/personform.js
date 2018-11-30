@@ -199,24 +199,26 @@ Page
     } else {
       wx.request({
         url: 'https://scsse.me/tia/user',
+        data: {
+          "studentId": num,
+          "studentName": name,
+          "grade": myyear,
+          "major": mymajor,
+          "contacts": phone + ';' + email,
+          "specialty": skill,
+          "openId":"123"
+        },
         method: 'POST',
         header: {
-
-          'content-type': 'application/x-www-form-urlencoded',
-
+          'content-type': 'application/json',
           'sessionid': wx.getStorageSync('sessionid')
         },
-        data: {
-          studentId: num,
-          studentName: name,
-          grade: myyear,
-          major: mymajor,
-          contacts: phone + ';' + email,
-          specialty: skill,
-          openId: '123',
-        },
         success: function(){
-          wx.setStorageSync("studentId", that.num);
+          console.info("studentID:" + e.detail.value.num);
+          wx.setStorageSync("studentId", e.detail.value.num);
+        },
+        fail:function(){
+          console.log("please try again");
         }
       })
     }

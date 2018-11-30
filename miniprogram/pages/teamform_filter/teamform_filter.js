@@ -8,9 +8,9 @@ Page({
     id: '',
     team: [],
     student: [],
-    apply:'',
-    focused:'',
-    apply:'应       聘'
+    apply: '',
+    focused: '',
+    apply: '应       聘'
   },
 
   /**
@@ -64,7 +64,7 @@ Page({
     wx.request({
       url: 'https://scsse.me/tia/user/focused',
       data: {
-        "studentId": wx.getStorageSync('sessionid'),
+        "studentId": wx.getStorageSync('studentId'),
       },
       method: 'GET',
       header: {
@@ -73,17 +73,21 @@ Page({
       },
       success: function(res) {
         console.log('personal info: ' + res.data);
-        
-        for(var i in res.data)
-        {
-          if(i.recuritId == that.data.id)
-          {
-              focused: '关注';
-              break;
-          }
-          else
-          {
-            focused: '取消关注';
+        if(res.data==""){
+          that.setData({
+            focused:"关 注"
+          })
+        }
+        for (var i in res.data) {
+          if (i.recuritId == that.data.id) {
+            that.setData({
+              focused: '取消关注'
+            })
+            break;
+          } else {
+            that.setData({
+              focused: '关 注'
+            })
           }
         }
       },
@@ -92,12 +96,12 @@ Page({
       }
     })
   },
-  attention:function(){
+  attention: function() {
     var that = this;
     wx.request({
       url: 'https://scsse.me/tia/user/focused',
       data: {
-        "studentId": wx.getStorageSync('sessionid'),
+        "studentId": wx.getStorageSync('studentId'),
         "recruitId": that.data.team.recruitId
       },
       method: 'PUT',
@@ -105,13 +109,13 @@ Page({
         'content-type': 'application/json;charset=utf-8',
         'sessionid': wx.getStorageSync('sessionid')
       },
-      success: function (res) {
+      success: function(res) {
         console.log('personal info: ' + res.data);
         that.setData({
           student: res.data,
         })
       },
-      fail: function (res) {
+      fail: function(res) {
         console.log("Sorry,please try again!")
       }
     })

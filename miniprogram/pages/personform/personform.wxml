@@ -4,7 +4,6 @@
 <view class='input-area'>
   <form bindsubmit="formSubmit">
     <input name='name' type='text' placeholder='请输入姓名' confirm-type='next' focus='true'></input>
-
     <radio-group class="radio-group" bindchange="radioChangeGender">
       <label class="radio" wx:for="{{gender}}" wx:key="gender">
         <radio value="{{item.name}}" color=" #09BB07" />{{item.value}}
@@ -36,7 +35,6 @@
         </view>
       </picker>
     </view>
-
     <button class="btn" formType="submit" >提交</button>
   </form>
 </view>
