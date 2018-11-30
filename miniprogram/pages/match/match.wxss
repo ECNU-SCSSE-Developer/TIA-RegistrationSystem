@@ -1,7 +1,5 @@
 /* pages/match/match.wxss */
-.weui-form-preview{
-    margin-bottom: 25px;
-}
+
 .weui-form-preview__value{
   text-align: left;
   font-size:17px;
@@ -14,4 +12,7 @@
 .weui-form-preview{
   border-radius: 20px;
   position: static;
+  margin-bottom: 25px;
 }
+
+
