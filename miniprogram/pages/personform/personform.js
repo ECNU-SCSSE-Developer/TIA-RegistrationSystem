@@ -210,7 +210,6 @@ Page
             "major": mymajor,
             "contacts": phone + ';' + email,
             "specialty": skill,
-            "openId": "123"
           },
           method: 'POST',
           header: {

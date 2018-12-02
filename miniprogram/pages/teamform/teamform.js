@@ -68,7 +68,7 @@ Page({
         url: 'https://scsse.me/tia/recruit',
         method: 'POST',
         header: {
-          'content-type': 'application/x-www-form-urlencoded',
+          'content-type': 'application/json;charset=utf-8',
           'sessionid': wx.getStorageSync('sessionid')
         },
         data: {

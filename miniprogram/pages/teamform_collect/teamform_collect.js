@@ -44,7 +44,7 @@ Page({
       url: 'https://scsse.me/tia/user/focused',
       method:'PUT',
       data:{
-        "studentId": wx.getStorageSync('studentId'),
+        "applicantId": wx.getStorageSync('studentId'),
         "recruitId":that.id,
       },
       header: {

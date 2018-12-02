@@ -33,12 +33,12 @@ Page({
   onLoad: function (options) {
       var that = this;
       this.setData({
-        id : options.data
+        id : options.id
       })
       wx.request({
-        url: 'https://scsse.me/tia/recruitment/recruit/applicants',
+        url: 'https://scsse.me/tia/applicant',
         data:{
-            "recruitId":id,
+            "recruitId":that.data.id
         },
         method: 'GET',
         header: {
@@ -57,7 +57,8 @@ Page({
       })
   },
   openConfirm: function (e) {
-    var id = e.currentTarget.dataset.name;
+    console.info(e.currentTarget.dataset.name)
+    var id = e.id;
     var that = this;
     var state = 'team.data[' + id + '].state';
     wx.showModal({
@@ -72,14 +73,14 @@ Page({
             [state]: "录用"
           })
           wx.request({
-            url: 'https://scsse.me/tia/recruitment/registered',
+            url: 'https://scsse.me/tia/registered',
             method: 'PUT',
             header: {
               'sessionid': wx.getStorageSync('sessionid')
             },
             data: {
-              studentId:that.studentId,
-              recruitId:that.recruitId,
+              'applicantId':res.studentId,
+              'recruitId':res.recruitId,
             },
           })
           console.log('用户点击确认')
@@ -88,14 +89,14 @@ Page({
             [state]: '未录用'
           })
           wx.request({
-            url: 'https://scsse.me/tia/recruitment/registered',
+            url: 'https://scsse.me/tia/registered',
             method: 'DELETE',
             header: {
               'sessionid': wx.getStorageSync('sessionid')
             },
             data: {
-              studentId: that.studentId,
-              recruitId: that.recruitId,
+              'studentId': res.studentId,
+              'recruitId': res.recruitId,
             },
           })
           console.log('用户点击取消')
