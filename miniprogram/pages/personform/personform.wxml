@@ -4,62 +4,47 @@
 
 <view class='input-area'>
   <form bindsubmit="formSubmit">
+  
+      <input name='name' type='text' placeholder=' 请输入姓名' confirm-type='next' focus='true'></input>
+  
+    <radio-group class="radio-group" bindchange="radioChangeGender">
 
+      <label class="radio" wx:for="{{gender}}" wx:key="gender">
+        <radio value="{{item.name}}" color=" #09BB07" />{{item.value}}
+      </label>
+    </radio-group>
+  
+      <input name='num' type='number' placeholder=' 请输入学号' confirm-type='next'></input>
+ 
+      <input name='phone' type='number' placeholder=' 请输入电话' confirm-type='next' minlength='11' maxlength='11'></input>
+  
+      <input name='email' type='text' placeholder=' 请输入邮箱' confirm-hold='next'></input>
+    
 
-    <view class="box">
-      <view class="title">姓名</view>
-      <view class="circle">
-        <input name='name' type='text' placeholder='请输入姓名' confirm-type='next' focus='true' value='{{personalinfo.studentName}}'></input>
-      </view>
-      </view>
-      <view class="box">
-        <view class="title">学号</view>
-        <view class="circle">
-          <input name='num' type='number' placeholder='请输入学号' confirm-type='next' value='{{personalinfo.studentId}}'></input>
-        </view>
-      </view>
-      <view class="box">
-        <view class="title">电话</view>
-        <view class="circle">
-          <input name='phone' type='number' placeholder='请输入电话' confirm-type='next' minlength='11' maxlength='11' value='{{contacts_split[0]}}'></input>
-        </view>
-      </view>
-      <view class="box">
-        <view class="title">邮箱</view>
-        <view class="circle">
-          <input name='email' type='text' placeholder='请输入邮箱' confirm-hold='next' value='{{contacts_split[1]}}'></input>
-        </view>
-      </view>
-      <view class="box">
-        <view class="title">专业</view>
-        <view class="circle">
-          <view class="section">
-            <picker bindchange="bindCasePickerChange_major" value='{{index1}}' range='{{array1}}' value='{{major_local}}'>
-              <view class="picker">
-                当前选择：{{array1[index_major]}}
-              </view>
-            </picker>
+    <view class='line'>
+      <view class="section">
+        <picker bindchange="bindCasePickerChange_major" value='{{index1}}' range='{{array1}}'>
+          <view class="picker">
+             {{array1[index_major]}}
           </view>
-        </view>
+        </picker>
       </view>
-      <view class="box">
-        <view class="title">年级</view>
-        <view class="circle">
-          <view class="section">
-            <picker bindchange="bindCasePickerChange_year" value='{{index2}}' range='{{array2}}' value='{{grade_local}}'>
-              <view class="picker">
-                当前选择：{{array2[index_year]}}
-              </view>
-            </picker>
+    </view>
+
+    <view class='line'>
+      <view class="section">
+        <picker bindchange="bindCasePickerChange_year" value='{{index2}}' range='{{array2}}'>
+          <view class="picker">
+            {{array2[index_year]}}
           </view>
-        </view>
+        </picker>
       </view>
-      <view class="box">
-        <view class="title">特长</view>
-        <view class="circle2">
-          <textarea name='skill' type='text' confirm-hold='next' placeholder='请输入个人特长' value='{{personalinfo.specialty}}'></textarea>
-        </view>
-      </view>
-      <button class="btn" formType="submit">提交</button>
+    </view>
+
+    <view class='content'>
+      <textarea name='skill' style="width:95%;margin-left:3%;margin-top:3%;resize:none;" placeholder="请输入个人特长"></textarea>
+    </view>
+
+    <button class="btn" formType="submit">提交</button>
   </form>
-  </view>
+</view>

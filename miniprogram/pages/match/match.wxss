@@ -2,17 +2,25 @@
 
 .weui-form-preview__value{
   text-align: left;
-  font-size:17px;
+  font-size:15px;
   line-height: 2em;
   color: black;
 }
 .weui-form-preview__value_in-hd{
-  font-size: 21px;
+  font-size: 20px;
 }
 .weui-form-preview{
   border-radius: 20px;
   position: static;
   margin-bottom: 25px;
+}
+.input-area button{
+  margin-top: 40px;
+  margin-bottom: 40px;
+  margin-left: 25px;
+  margin-right: 25px;
+  background-color: rgb(116, 185, 255);
+  color: #ffffff
 }
 
 
