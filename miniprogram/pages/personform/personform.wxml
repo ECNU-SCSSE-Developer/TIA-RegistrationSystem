@@ -4,14 +4,13 @@
 
 <view class='input-area'>
   <form bindsubmit="formSubmit">
-    <view class="circle">
-      <input name='name' type='text' placeholder='请输入姓名' confirm-type='next' focus='true' value='{{personalinfo.studentName}}'></input>
 
-      <view class="box">
-        <view class="title">姓名</view>
-        <view class="circle">
-          <input name='name' type='text' placeholder='请输入姓名' confirm-type='next' focus='true'></input>
-        </view>
+
+    <view class="box">
+      <view class="title">姓名</view>
+      <view class="circle">
+        <input name='name' type='text' placeholder='请输入姓名' confirm-type='next' focus='true' value='{{personalinfo.studentName}}'></input>
+      </view>
       </view>
       <view class="box">
         <view class="title">学号</view>
@@ -61,6 +60,6 @@
           <textarea name='skill' type='text' confirm-hold='next' placeholder='请输入个人特长' value='{{personalinfo.specialty}}'></textarea>
         </view>
       </view>
-      <button class="btn" formType="submit">提交</button></view>
+      <button class="btn" formType="submit">提交</button>
   </form>
   </view>

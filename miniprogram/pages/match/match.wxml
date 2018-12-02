@@ -35,8 +35,8 @@
                 </navigator>
             </view--> 
         </view>
-        <navigator url="../teamform/teamform?id={{matchid}}">
-          <button class="btn" bindtap="join">发布招聘</button>        
+        <navigator url="../teamform/teamform?id={{id}}">
+          <button class="btn">发布招聘</button>        
         </navigator>
 
         <!--首先检查个人信息是否完善，其次检测比赛是否为个人赛的形式，再提问想要创建团队还是加入别的队伍 -->

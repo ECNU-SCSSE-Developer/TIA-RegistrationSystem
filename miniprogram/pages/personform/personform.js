@@ -8,7 +8,7 @@ Page
      * 页面的初始数据
      */
     data: {
-      contacts_split: ['123', '456'],
+      contacts_split: ['', ''],
       major_local: '',
       grade_local: '',
       array1: ['请选择专业', '软件工程', '计算机科学', '心理学', '设计', '教育', '经管'],

@@ -1,44 +1,5 @@
 //var myposition = 0;
 Page({
-/*  data: {
-    array: ['请选择', '前端', '后端'],
-    index: 0,
-    objectarray: [{
-      id: 0,
-      name: '请选择'
-    },
-    {
-      id: 1,
-      name: '前端'
-    },
-    {
-      id: 2,
-      name: "后端"
-    }
-    ],
-  },
- 
-  bindCasePickerChange_major: function (e) {
-    if (e.detail.value == 2) {
-      major = this.data.array[2];
-      this.setData({
-        index: e.detail.value
-      })
-    }
-    if (e.detail.value == 1) {
-      major = this.data.array[1];
-      this.setData({
-        index: e.detail.value
-      })
-    }
-    if (e.detail.value == 0) {
-      major = this.data.array[0];
-      this.setData({
-        index: e.detail.value
-      })
-    }
-  },
-  */ 
   data: {
     id:'',
   },
@@ -51,14 +12,16 @@ Page({
       id:options.id
     })
   },
+
+
   formSubmit: function (e) {
+    var that = this;
     let {
       name,
       num,
       description,
       requirements
     } = e.detail.value;
-    //let myposition = position;
 
     if (e.detail.value.name.length == 0) {
       wx.showModal({
@@ -100,9 +63,7 @@ Page({
         confirmColor: "#557d8a",
         confirmText: "好的",
       });
-    }
-
-    else {
+    } else {
       wx.request({
         url: 'https://scsse.me/tia/recruit',
         method: 'POST',
@@ -115,7 +76,8 @@ Page({
           recruitName: name,
           recruitDescription: description,
           recruitRequirements: requirements,
-          matchId:this.data.id,
+          matchId:that.data.id,
+          studentId: wx.getStorageSync("studentId")
         }
       })
     }
