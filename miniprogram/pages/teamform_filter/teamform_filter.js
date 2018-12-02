@@ -77,17 +77,20 @@ Page({
           that.setData({
             focused:"关 注"
           })
+          console.info("1")
         }
         for (var i in res.data) {
-          if (i.recuritId == that.data.id) {
+          if (res.data[i].recruitId == that.data.id) {
             that.setData({
               focused: '取消关注'
             })
+            console.info("2")
             break;
           } else {
             that.setData({
               focused: '关 注'
             })
+            console.info("3")
           }
         }
       },
@@ -98,10 +101,11 @@ Page({
   },
   attention: function() {
     var that = this;
+    if(that.data.focused=="关 注"){
     wx.request({
       url: 'https://scsse.me/tia/user/focused',
       data: {
-        "studentId": wx.getStorageSync("studentId"),
+        "applicantId": wx.getStorageSync("studentId"),
         "recruitId": that.data.team.recruitId
       },
       method: 'PUT',
@@ -112,13 +116,36 @@ Page({
       success: function(res) {
         console.log('personal info: ' + res.data);
         that.setData({
-          student: res.data,
+          focused:"取消关注"
         })
       },
       fail: function(res) {
         console.log("Sorry,please try again!")
       }
     })
+    }else{
+      wx.request({
+        url: 'https://scsse.me/tia/user/focused',
+        data: {
+          "applicantId": wx.getStorageSync("studentId"),
+          "recruitId": that.data.team.recruitId
+        },
+        method: 'DELETE',
+        header: {
+          'content-type': 'application/json;charset=utf-8',
+          'sessionid': wx.getStorageSync('sessionid')
+        },
+        success: function (res) {
+          console.log('personal info: ' + res.data);
+          that.setData({
+            focused: "关 注"
+          })
+        },
+        fail: function (res) {
+          console.log("Sorry,please try again!")
+        }
+      })
+    }
   },
   /**
    * 生命周期函数--监听页面初次渲染完成
