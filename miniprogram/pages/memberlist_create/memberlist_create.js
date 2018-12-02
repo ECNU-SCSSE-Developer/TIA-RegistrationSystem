@@ -58,8 +58,7 @@ Page({
   },
   openConfirm: function (e) {
     console.info(e.currentTarget.dataset.name)
-    var id = e.id;
-    var that = this;
+    var id = e.currentTarget.dataset.name;
     var state = 'team.data[' + id + '].state';
     wx.showModal({
       title: '录用',
@@ -79,8 +78,8 @@ Page({
               'sessionid': wx.getStorageSync('sessionid')
             },
             data: {
-              'applicantId':res.studentId,
-              'recruitId':res.recruitId,
+              'applicantId':that.studentId,
+              'recruitId':that.data.id
             },
           })
           console.log('用户点击确认')
