@@ -17,10 +17,9 @@ Page({
         id: options.id
       }),
       wx.request({
-        url: 'https://scsse.me/tia/user/focused',
+        url: 'https://scsse.me/tia/recruit',
         data: {
-          "studentId": wx.getStorageSync('studentId'),
-          "recruitId": id,
+          "recruitId": that.data.id,
         },
         method: 'GET',
         header: {
@@ -28,9 +27,29 @@ Page({
           'sessionid': wx.getStorageSync('sessionid')
         },
         success: function(res) {
-          console.log('personal info: ' + res.data);
+          console.log('recruitment info: ' + res.data);
           that.setData({
             team: res.data
+          })
+          wx.request({
+            url: 'https://scsse.me/tia/user',
+            data: {
+              "studentId": that.data.team.studentId,
+            },
+            method: 'GET',
+            header: {
+              'content-type': 'application/json;charset=utf-8',
+              'sessionid': wx.getStorageSync('sessionid')
+            },
+            success: function (res) {
+              console.log('captain info: ' + res.data);
+              that.setData({
+                captain: res.data
+              })
+            },
+            fail: function (res) {
+              console.log("Sorry,please try again!")
+            }
           })
         },
         fail: function(res) {

@@ -10,7 +10,7 @@
     <view class="weui-form-preview__bd">
       <view class="weui-form-preview__item">
         <view class="weui-form-preview__label">队长</view>
-        <view class="weui-form-preview__value">{{team.student.studentName}}</view>
+        <view class="weui-form-preview__value">{{captain.studentName}}</view>
       </view>
 
       <view class="weui-form-preview__item">
@@ -24,7 +24,7 @@
 
       <view class="weui-form-preview__item">
         <view class="weui-form-preview__label">联系方式</view>
-        <view class="weui-form-preview__value">{{student.contacts}}</view>
+        <view class="weui-form-preview__value">{{captain.contacts}}</view>
       </view>
       <view class="weui-form-preview__item">
         <view class="weui-form-preview__label">报名情况</view>

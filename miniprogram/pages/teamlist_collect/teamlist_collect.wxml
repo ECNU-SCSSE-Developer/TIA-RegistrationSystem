@@ -5,12 +5,11 @@
       <!--navigator wx:for="{{team.data}}" wx:key="{{team.data}}" url="../../team/team?objectId={{item.objectId}}" class="weui-media-box weui-media-box_appmsg" hover-class="weui-cell_active" id="{{item.id}}"-->
       <navigator wx:for="{{team}}" wx:key="{{team}}" url="../teamform_collect/teamform_collect?id={{item.recruitId}}" class="weui-media-box weui-media-box_appmsg" hover-class="weui-cell_active" >
         <view class="weui-media-box__bd weui-media-box__bd_in-appmsg">
-          <view class="weui-media-box__title">{{item.recruitId}}</view>
-          <view class="weui-media-box__desc">{{item.number}}</view>
-          <view class="weui-media-box__state">{{item.match}}</view>
+          <view class="weui-media-box__title">{{item.recruitName}}</view>
+          <view class="weui-media-box__desc" > 待招{{item.willingNumber-item.registeredNumber}}人</view>
+          <view class="weui-media-box__state">{{item.matchName}}</view>
         </view>
       </navigator>
     </view>
   </view>
-
 </view>
