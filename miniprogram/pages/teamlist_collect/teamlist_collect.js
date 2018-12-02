@@ -50,7 +50,27 @@ onLoad: function(options) {
       console.log("Sorry,please try again!")
     }
   })
-
+    wx.request({
+      url: 'https://scsse.me/tia/match',
+      data:{
+        "matchId":that.data.team.matchId,
+        "selectAll":0,
+      },
+      method:'GET',
+      header: {
+        'content-type': 'application/json;charset=utf-8',
+        'sessionid': wx.getStorageSync('sessionid')
+      },
+      success: function (res) {
+        console.log('personal info: ' + res.data);
+        that.setData({
+          match: res.data,
+        })
+      },
+      fail: function (res) {
+        console.log("Sorry,please try again!")
+      }
+    })
 },
 
 /**

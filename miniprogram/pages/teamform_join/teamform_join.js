@@ -11,7 +11,7 @@ Page({
   /**
    * 生命周期函数--监听页面加载
    */
-  onLoad: function(options) {
+  /*onLoad: function(options) {
     var that = this;
     this.setData({
         id: options.id
@@ -58,11 +58,57 @@ Page({
           console.log("Sorry,please try again!")
         }
       })
-  },
+  },*/
 
 /**
  * 生命周期函数--监听页面初次渲染完成
  */
+  onLoad: function (options) {
+    var that = this;
+    this.setData({
+      id: options.id
+    }),
+      wx.request({
+        url: 'https://scsse.me/tia/recruit',
+        data: {
+          "recruitId": that.data.id,
+        },
+        method: 'GET',
+        header: {
+          'content-type': 'application/json;charset=utf-8',
+          'sessionid': wx.getStorageSync('sessionid')
+        },
+        success: function (res) {
+          console.log('recruitment info: ' + res.data);
+          that.setData({
+            team: res.data
+          })
+          wx.request({
+            url: 'https://scsse.me/tia/user',
+            data: {
+              "studentId": that.data.team.studentId,
+            },
+            method: 'GET',
+            header: {
+              'content-type': 'application/json;charset=utf-8',
+              'sessionid': wx.getStorageSync('sessionid')
+            },
+            success: function (res) {
+              console.log('captain info: ' + res.data);
+              that.setData({
+                captain: res.data
+              })
+            },
+            fail: function (res) {
+              console.log("Sorry,please try again!")
+            }
+          })
+        },
+        fail: function (res) {
+          console.log("Sorry,please try again!")
+        }
+      })
+  },
 onReady: function() {
 
 },
