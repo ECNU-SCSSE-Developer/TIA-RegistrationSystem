@@ -1,21 +1,16 @@
-page{
-   background:  rgb(239, 239, 244) ;
-}
-
-.form-title{
+.form-title {
   font-size: 25px;
   margin-top: 20px;
   margin-bottom: 20px;
   margin-left: 30px;
 }
 
-.input-area{
+.input-area {
   margin-left: 10px;
   margin-right: 10px;
 }
 
-.circle
-{
+.circle {
   border-radius: 20rpx;
   padding: 5rpx 20rpx;
   width: 70%;
@@ -24,9 +19,7 @@ page{
   background-color: white;
 }
 
-
-.circle2
-{
+.circle2 {
   border-radius: 20rpx;
   height: 120px;
   width: 70%;
@@ -34,22 +27,23 @@ page{
   background-color: white;
 }
 
-.input-area button{
+.section {
+  color: rgb(202, 202, 202);
+}
+
+.input-area button {
   margin-top: 40px;
   margin-bottom: 40px;
   margin-left: 25px;
   margin-right: 25px;
   background-color: rgb(116, 185, 255);
-  color: #ffffff
+  color: #fff;
 }
 
-.form-title{
-  text-align: center;
-  margin-left:0;
-}
-.box{
+.box {
   display: flex;
 }
-.title{
-  margin: 0 10px    0 0;
+
+.title {
+  margin: 0 10px 0 0;
 }

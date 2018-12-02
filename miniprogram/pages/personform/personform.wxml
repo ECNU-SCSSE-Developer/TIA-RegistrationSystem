@@ -5,7 +5,6 @@
 <view class='input-area'>
   <form bindsubmit="formSubmit">
 
-
     <view class="box">
       <view class="title">姓名</view>
       <view class="circle">
