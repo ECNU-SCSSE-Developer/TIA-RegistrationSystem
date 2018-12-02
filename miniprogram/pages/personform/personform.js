@@ -8,6 +8,9 @@ Page
      * 页面的初始数据
      */
     data: {
+      contacts_split: ['123', '456'],
+      major_local: '',
+      grade_local: '',
       array1: ['请选择专业', '软件工程', '计算机科学', '心理学', '设计', '教育', '经管'],
       index_major: 0,
       objectArray1: [{
@@ -239,7 +242,97 @@ Page
      * 生命周期函数--监听页面加载
      */
     onLoad: function(options) {
+      var that = this;
+      let studentId = wx.getStorageSync('studentId');
+      if (studentId) {
+        wx.request({
+          url: 'https://scsse.me/tia/user',
+          method: 'GET',
+          data: {
+            "studentId": studentId,
+          },
+          header: {
+            'content-type': 'application/json',
+            'sessionid': wx.getStorageSync('sessionid')
+          },
+          success: function(res) {
+            that.setData({
+              personalinfo: res.data,
+              contacts_split: res.data.contacts.split(";")
+            })
+            if (res.data.major == "0") {
+              that.setData ({
+                index_major : 0
+              })
+            } else if (res.data.major == "1") {
+              that.setData ({
+                index_major: 1
+              })
+            } else if (res.data.major == "2") {
+              that.setData ({
+                index_major: 2
+              })
+            } else if (res.data.major == "3") {
+              that.setData ({
+                index_major: 3
+              })
+            } else if (res.data.major == "4") {
+              that.setData ({
+                index_major: 4
+              })
+            } else if (res.data.major == "5") {
+              that.setData ({
+                index_major: 5
+              })
+            } else if (res.data.major == "6") {
+              that.setData ({
+                index_major: 6
+              })
+            }
+            if (res.data.grade == 0) {
+              that.setData ({
+                index_year: 0
+              })
+            } else if (res.data.grade == 1) {
+              that.setData ({
+                index_year: 1
+              })
+            } else if (res.data.grade == 2) {
+              that.setData ({
+                index_year: 2
+              })
+            } else if (res.data.grade == 3) {
+              that.setData ({
+                index_year: 3
+              })
+            } else if (res.data.grade == 4) {
+              that.setData ({
+                index_year: 4
+              })
+            } else if (res.data.grade == 5) {
+              that.setData ({
+                index_year: 5
+              })
+            } else if (res.data.grade == 6) {
+              that.setData ({
+                index_year: 6
+              })
+            } else if (res.data.grade == 7) {
+              that.setData ({
+                index_year: 7
+              })
+            } else if (res.data.grade == 8) {
+              that.setData ({
+                index_year: 8
+              })
+            }
+          },
+          fail: function() {
+            console.log("please try again");
+          }
+        })
 
+      }
     },
 
     /**
