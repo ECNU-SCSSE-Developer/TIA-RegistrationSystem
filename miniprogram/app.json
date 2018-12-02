@@ -36,7 +36,7 @@
         "pagePath": "pages/teamlist_filter/teamlist_filter",
         "iconPath": "image/6.png",
         "selectedIconPath": "image/3.png",
-        "text": "组队"
+        "text": "招聘"
       },
       {
         "pagePath":"pages/matchlist/matchlist",

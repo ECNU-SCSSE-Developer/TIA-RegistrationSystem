@@ -101,7 +101,7 @@ Page({
     wx.request({
       url: 'https://scsse.me/tia/user/focused',
       data: {
-        "studentId": wx.getStorageSync('studentId'),
+        "studentId": wx.getStorageSync("studentId"),
         "recruitId": that.data.team.recruitId
       },
       method: 'PUT',

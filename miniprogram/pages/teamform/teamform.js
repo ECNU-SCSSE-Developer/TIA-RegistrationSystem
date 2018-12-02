@@ -32,6 +32,7 @@ this.setData({
   index_position: e.detail.value
 })
 },
+
   formSubmit: function (e) {
     var that = this;
     let {
@@ -41,7 +42,6 @@ this.setData({
       requirements,
       position
     } = e.detail.value;
-    let myposition = index;
 
     if (e.detail.value.name.length == 0) {
       wx.showModal({
@@ -83,9 +83,7 @@ this.setData({
         confirmColor: "#557d8a",
         confirmText: "好的",
       });
-    }
-
-    else {
+    } else {
       wx.request({
         url: 'https://scsse.me/tia/recruit',
         method: 'POST',
