@@ -4,51 +4,51 @@
 
 <view class='input-area'>
   <form bindsubmit="formSubmit">
-    <view class="circle">  
-    <input name='name' type='text' placeholder='请输入姓名' confirm-type='next' focus='true'></input>
-    </view>
+    <view class="circle">
+      <input name='name' type='text' placeholder='请输入姓名' confirm-type='next' focus='true'></input>
 
-    <radio-group class="radio-group" bindchange="radioChangeGender">
-    
-      <label class="radio" wx:for="{{gender}}" wx:key="gender">
-        <radio value="{{item.name}}" color=" #09BB07" />{{item.value}}
-      </label>
-    </radio-group>
-  <view class="circle"> 
-    <input name='num' type='number' placeholder='请输入学号' confirm-type='next'></input>
-    </view>
-  <view class="circle"> 
-    <input name='phone' type='number' placeholder='请输入电话' confirm-type='next' minlength='11' maxlength='11'></input>
-    </view>
-  <view class="circle"> 
-    <input name='email' type='text' placeholder='请输入邮箱' confirm-hold='next'></input>
-    </view>
+      <radio-group class="radio-group" bindchange="radioChangeGender">
 
-     
-  <view class="circle">
-    <view class="section">
-      <picker bindchange="bindCasePickerChange_major" value='{{index1}}' range='{{array1}}'>
-        <view class="picker">
-         请选择专业： {{array1[index1]}}
+        <label class="radio" wx:for="{{gender}}" wx:key="gender">
+          <radio value="{{item.name}}" color=" #09BB07" />{{item.value}}
+        </label>
+      </radio-group>
+      <view class="circle">
+        <input name='num' type='number' placeholder='请输入学号' confirm-type='next'></input>
+      </view>
+      <view class="circle">
+        <input name='phone' type='number' placeholder='请输入电话' confirm-type='next' minlength='11' maxlength='11'></input>
+      </view>
+      <view class="circle">
+        <input name='email' type='text' placeholder='请输入邮箱' confirm-hold='next'></input>
+      </view>
+
+
+      <view class="circle">
+        <view class="section">
+          <picker bindchange="bindCasePickerChange_major" value='{{index1}}' range='{{array1}}'>
+            <view class="picker">
+              当前选择：{{array1[index_major]}}
+            </view>
+          </picker>
         </view>
-      </picker>
-  </view>
+      </view>
 
-  <view class="circle1">
-    <view class="section">
-      <picker bindchange="bindCasePickerChange_year" value='{{index2}}' range='{{array2}}'>
-        <view class="picker">
-          请选择年级：{{array2[index2]}}
+      <view class="circle1">
+        <view class="section">
+          <picker bindchange="bindCasePickerChange_year" value='{{index2}}' range='{{array2}}'>
+            <view class="picker">
+              当前选择：{{array2[index_year]}}
+            </view>
+          </picker>
         </view>
-      </picker>
-    </view>
- </view>
+      </view>
 
-<view class="circle2">
-    <textarea name='skill' type='text' confirm-hold='next' placeholder='请输入个人特长'></textarea>
-    </view>
+      <view class="circle2">
+        <textarea name='skill' type='text' confirm-hold='next' placeholder='请输入个人特长'></textarea>
+      </view>
 
-    <button class="btn" formType="submit" >提交</button>
-   </view>
+      <button class="btn" formType="submit">提交</button>
+    </view>
   </form>
 </view>

@@ -27,6 +27,7 @@ Page({
       method: 'GET',
       header: {
         'content-type': 'application/json;charset=utf-8',
+        'sessionid': wx.getStorageSync('sessionid')
       },
       success: function (res) {
         console.log('获得比赛信息：' + res.data);
