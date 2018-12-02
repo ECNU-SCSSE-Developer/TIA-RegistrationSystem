@@ -5,39 +5,38 @@
 
 <view class='input-area'>
   <form bindsubmit="formSubmit">
-   <view class="circle">
-    <input name='name' type='text' placeholder='请填写项目名称' confirm-type='next' focus='true'></input>
-    </view>
+    <input name='name' type='text' placeholder=' 请填写项目名称' confirm-type='next' focus='true'></input>
+
 
     <radio-group class="radio-group" bindchange="radioChangeGender">
       <label class="radio" wx:for="{{gender}}" wx:key="gender">
         <radio value="{{item.name}}" color=" #09BB07" />{{item.value}}
       </label>
-    </radio-group> 
+    </radio-group>
 
-    <view class="circle">
-     <input name='num' type='number' placeholder='请输入学号' confirm-type='next' minlength='11' maxlength='11'></input>
-     </view>
-    
-<!--
+
+    <input name='num' type='number' placeholder=' 请输入学号' confirm-type='next' minlength='11' maxlength='11'></input>
+
+
+   
 <view class="section">
+    <view class="line">
       <picker bindchange="bindCasePickerChange_position" value='{{}}' range='{{array}}'>
         <view class="picker">
-          招募位置：{{array[index]}}
+          {{array[index_position]}}
         </view>
       </picker>
     </view>
--->
-<view class="circle1">
-<textarea name='description'  type='text' confirm-hold='next' placeholder="请输入项目简介" >
-</textarea>
-</view>
+  </view>
 
-<view class="circle1">
-<textarea name='requirements'  type='text' confirm-hold='next' placeholder="请输入具体要求" >
-</textarea>
-</view>
+    <view class="content">
+      <textarea name='description' style="width:95%;margin-left:3%;margin-top:3%;resize:none;" placeholder="请输入项目简介"></textarea>
+    </view>
 
-    <button class="btn" formType="submit" >发布</button>
+    <view class="content">
+      <textarea name='requirements' style="width:95%;margin-left:3%;margin-top:3%;resize:none;" placeholder="请输入招募要求"></textarea>
+    </view>
+
+    <button class="btn" formType="submit">发布</button>
   </form>
- </view>
+</view>

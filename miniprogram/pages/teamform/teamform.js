@@ -1,18 +1,37 @@
-//var myposition = 0;
+var position = 0;
+var index = 0;
+
 Page({
   data: {
-    id:'',
+    array: ['请选择招募位置', '前端', '后端'],
+    index_position: 0,
+    objectArray: [{
+      id: 0,
+      name: '前端'
+    },
+    {
+      id: 1,
+      name: '后端'
+    },
+    ],
   },
-
-  /**
- * 生命周期函数--监听页面加载
- */
-  onLoad: function (options) {
-    this.setData({
-      id:options.id
-    })
-  },
-
+ bindCasePickerChange_position: function (e) {
+  if(e.detail.value == 2) {
+  position = this.data.objectArray[2].name;
+  index = this.data.objectArray[2].id;
+}
+if (e.detail.value == 1) {
+  position = this.data.objectArray[1].name;
+  index = this.data.objectArray[1].id;
+}
+if (e.detail.value == 0) {
+  position = this.data.objectArray[0].name;
+  index = this.data.objectArray[0].id;
+}
+this.setData({
+  index_position: e.detail.value
+})
+},
 
   formSubmit: function (e) {
     var that = this;
@@ -20,7 +39,8 @@ Page({
       name,
       num,
       description,
-      requirements
+      requirements,
+      position
     } = e.detail.value;
 
     if (e.detail.value.name.length == 0) {
@@ -39,7 +59,7 @@ Page({
         confirmText: "好的",
       });
     }
-    /*  else if (e.myposition == 0) {
+      else if (e.myposition == 0) {
           wx.showModal({
             content: "请选择招募位置！",
             showCancel: false,
@@ -47,7 +67,7 @@ Page({
             confirmText: "好的",
           })
          }
-      */
+      
     else if (e.detail.value.description.length == 0) {
       wx.showModal({
         content: "请填写项目简介！",
@@ -72,15 +92,38 @@ Page({
           'sessionid': wx.getStorageSync('sessionid')
         },
         data: {
-          userId: num,
-          recruitName: name,
-          recruitDescription: description,
-          recruitRequirements: requirements,
-          matchId:that.data.id,
-          studentId: wx.getStorageSync("studentId")
+          "userId": num,
+          "recruitName": name,
+          "recruitDescription": description,
+          "recruitRequirements": requirements,
+          "recruitPosition": positions,
+          "matchId":"123"
+        },
+        success: function () {
+          console.info("userID:" + e.detail.value.num);
+          wx.setStorageSync("userId", e.detail.value.num);
+          wx.showToast({
+            title: '修改成功',
+            icon: 'success',
+            duration: 1000
+          });
+          setTimeout(function () {
+            wx.switchTab({
+              url: "/pages/matchlist"
+            });
+          }, 1000)
+        },
+        fail: function () {
+          console.log("please try again");
         }
       })
     }
+  },
+  /**
+    * 生命周期函数--监听页面加载
+    */
+  onLoad: function (options) {
+
   },
   /**
    * 生命周期函数--监听页面初次渲染完成
