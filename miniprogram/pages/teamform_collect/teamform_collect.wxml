@@ -38,7 +38,7 @@
 
   </view>
   <view class="item">
-    <button class="btn" bindtap="participation">取消收藏 
+    <button class="btn" bindtap="participation">取消收藏
     </button>
   </view>
 </view>

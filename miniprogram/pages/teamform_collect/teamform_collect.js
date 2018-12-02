@@ -5,7 +5,7 @@ Page({
    * 页面的初始数据
    */
   data: {
-
+    id:"",
   },
 
   /**
@@ -57,23 +57,23 @@ Page({
         }
       })
   },
-  participation :function(){
-    var that = this;
+  participation: function (){
+    var that = this
     wx.request({
       url: 'https://scsse.me/tia/user/focused',
-      method:'PUT',
+      method:'DELETE',
       data:{
         "applicantId": wx.getStorageSync('studentId'),
-        "recruitId":that.id,
+        "recruitId":that.data.id,
       },
       header: {
         'content-type': 'application/json;charset=utf-8',
         'sessionid': wx.getStorageSync('sessionid')
       },
-      success: function () {
+      success: function (res) {
         console.log('personal info: ' + res.data);
-        wx.navigateTo({
-          url: '../teamlist_collect/teamlist_collect',
+        wx.switchTab({
+          url: '/pages/mine/mine',
         })
       },
       fail: function (res) {
