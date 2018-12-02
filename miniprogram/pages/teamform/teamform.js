@@ -3,6 +3,7 @@ var index = 0;
 
 Page({
   data: {
+    matchId:'',
     array: ['请选择招募位置', '前端', '后端'],
     index_position: 0,
     objectArray: [{
@@ -33,7 +34,6 @@ Page({
     var that = this;
     let {
       name,
-      num,
       description,
       requirements,
     } = e.detail.value;
@@ -45,14 +45,8 @@ Page({
         confirmColor: "#557d8a",
         confirmText: "好的",
       });
-    } else if (e.detail.value.num.length == 0) {
-      wx.showModal({
-        content: "请填写学号信息！",
-        showCancel: false,
-        confirmColor: "#557d8a",
-        confirmText: "好的",
-      });
-    } else if (position == "") {
+    } 
+    else if (position == "") {
       wx.showModal({
         content: "请选择招募位置！",
         showCancel: false,
@@ -82,12 +76,12 @@ Page({
           'sessionid': wx.getStorageSync('sessionid')
         },
         data: {
-          "userId": num,
+          "studentId":wx.getStorageSync("studentId"),
           "recruitName": name,
           "recruitDescription": description,
           "recruitRequirements": requirements,
           "recruitPosition": myposition,
-          "matchId": "123"
+          "matchId": that.data.matchId
         },
         success: function() {
           console.info("userID:" + e.detail.value.num);
@@ -99,7 +93,7 @@ Page({
           });
           setTimeout(function() {
             wx.switchTab({
-              url: "/pages/matchlist"
+              url: "/pages/matchlist/matchlist"
             });
           }, 1000)
         },
@@ -113,7 +107,9 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function(options) {
-
+    this.setData({
+      matchId: options.id
+    })
   },
   /**
    * 生命周期函数--监听页面初次渲染完成

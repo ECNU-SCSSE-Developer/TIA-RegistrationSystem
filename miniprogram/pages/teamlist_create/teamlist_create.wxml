@@ -6,9 +6,9 @@
      
       <navigator wx:for="{{team}}" wx:key="{{team}}" url="../memberlist_create/memberlist_create?id={{item.recruitId}}" class="weui-media-box weui-media-box_appmsg" hover-class="weui-cell_active" >
         <view class="weui-media-box__bd weui-media-box__bd_in-appmsg">
-          <view class="weui-media-box__title">{{item.recuritName}}</view>
-          <view class="weui-media-box__desc">已申请{{item.registeredNumber}}</view>
-          <view class="weui-media-box__state">{{item.match}}</view>
+          <view class="weui-media-box__title">{{item.recruitName}}</view>
+          <view class="weui-media-box__desc">已申请{{item.registeredNumber}}人</view>
+          <view class="weui-media-box__state">{{item.matchName}}</view>
         </view>
       </navigator>
     </view>
