@@ -10,7 +10,7 @@ Page({
     student: [],
     apply: '',
     focused: '',
-    apply: '应       聘'
+    apply: ''
   },
 
   /**
@@ -73,9 +73,9 @@ Page({
       },
       success: function(res) {
         console.log('personal info: ' + res.data);
-        if(res.data==""){
+        if (res.data == "") {
           that.setData({
-            focused:"关 注"
+            focused: "关 注"
           })
           console.info("1")
         }
@@ -98,32 +98,69 @@ Page({
         console.log("Sorry,please try again!")
       }
     })
-  },
-  attention: function() {
-    var that = this;
-    if(that.data.focused=="关 注"){
     wx.request({
-      url: 'https://scsse.me/tia/user/focused',
+      url: 'https://scsse.me/tia/applicant',
       data: {
-        "applicantId": wx.getStorageSync("studentId"),
-        "recruitId": that.data.team.recruitId
+        "recruitId": that.data.id,
       },
-      method: 'PUT',
+      method: 'GET',
       header: {
         'content-type': 'application/json;charset=utf-8',
         'sessionid': wx.getStorageSync('sessionid')
       },
       success: function(res) {
         console.log('personal info: ' + res.data);
-        that.setData({
-          focused:"取消关注"
-        })
+        if (res.data == "") {
+          that.setData({
+            apply: "应 聘"
+          })
+          console.info("1")
+        }
+        for (var i in res.data) {
+          if (res.data[i].studentId == wx.getStorageSync('studentId')) {
+            that.setData({
+              apply: '取消应聘'
+            })
+            console.info("2")
+            break;
+          } else {
+            that.setData({
+              apply: '应 聘'
+            })
+            console.info("3")
+          }
+        }
       },
       fail: function(res) {
         console.log("Sorry,please try again!")
       }
     })
-    }else{
+  },
+  attention: function() {
+    var that = this;
+    if (that.data.focused == "关 注") {
+      wx.request({
+        url: 'https://scsse.me/tia/user/focused',
+        data: {
+          "applicantId": wx.getStorageSync("studentId"),
+          "recruitId": that.data.team.recruitId
+        },
+        method: 'PUT',
+        header: {
+          'content-type': 'application/json;charset=utf-8',
+          'sessionid': wx.getStorageSync('sessionid')
+        },
+        success: function(res) {
+          console.log('personal info: ' + res.data);
+          that.setData({
+            focused: "取消关注"
+          })
+        },
+        fail: function(res) {
+          console.log("Sorry,please try again!")
+        }
+      })
+    } else {
       wx.request({
         url: 'https://scsse.me/tia/user/focused',
         data: {
@@ -135,15 +172,68 @@ Page({
           'content-type': 'application/json;charset=utf-8',
           'sessionid': wx.getStorageSync('sessionid')
         },
-        success: function (res) {
+        success: function(res) {
           console.log('personal info: ' + res.data);
           that.setData({
             focused: "关 注"
           })
         },
-        fail: function (res) {
+        fail: function(res) {
           console.log("Sorry,please try again!")
         }
+      })
+    }
+  },
+  participation: function() {
+    var that = this;
+    if(wx.getStorageSync("studentId")!=null){
+      if (that.data.apply == "应 聘") {
+      wx.request({
+        url: 'https://scsse.me/tia/applicant',
+        data: {
+          "studentId": wx.getStorageSync("studentId"),
+          "recruitId": that.data.team.recruitId
+        },
+        method: 'PUT',
+        header: {
+          'content-type': 'application/json;charset=utf-8',
+          'sessionid': wx.getStorageSync('sessionid')
+        },
+        success: function(res) {
+          console.log('personal info: ' + res.data);
+          that.setData({
+            apply: "取消应聘"
+          })
+        },
+        fail: function(res) {
+          console.log("Sorry,please try again!")
+        }
+      })
+    } else {
+      wx.request({
+        url: 'https://scsse.me/tia/applicant',
+        data: {
+          "studentId": wx.getStorageSync("studentId"),
+          "recruitId": that.data.team.recruitId
+        },
+        method: 'DELETE',
+        header: {
+          'content-type': 'application/json;charset=utf-8',
+          'sessionid': wx.getStorageSync('sessionid')
+        },
+        success: function(res) {
+          console.log('personal info: ' + res.data);
+          that.setData({
+            apply: "应 聘"
+          })
+        },
+        fail: function(res) {
+          console.log("Sorry,please try again!")
+        }
+      })
+    }}else{
+      wx.navigateTo({
+        url: '../personform/personform',
       })
     }
   },

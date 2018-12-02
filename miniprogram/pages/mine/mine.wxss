@@ -55,3 +55,13 @@ font-size: 20px;
   height:40px;
   border-radius: 50%;
 }
+
+#userinfo{
+  width: 60px;
+  height:60px;
+  border-radius:50%;
+  display: flex;
+  overflow:hidden;
+  text-align: center;
+  margin: 0 auto;
+}

@@ -1,1 +1,4 @@
 /* pages/teamlist_create/teamlist_create.wxss */
+.weui-panel__hd{
+  padding: 0;
+}
