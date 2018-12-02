@@ -4,26 +4,33 @@
 
 <view class='input-area'>
   <form bindsubmit="formSubmit">
-    <view class="circle">
-      <input name='name' type='text' placeholder='请输入姓名' confirm-type='next' focus='true'></input>
 
-      <radio-group class="radio-group" bindchange="radioChangeGender">
-
-        <label class="radio" wx:for="{{gender}}" wx:key="gender">
-          <radio value="{{item.name}}" color=" #09BB07" />{{item.value}}
-        </label>
-      </radio-group>
+    <view class="box">
+      <view class="title">姓名</view>
+      <view class="circle">
+        <input name='name' type='text' placeholder='请输入姓名' confirm-type='next' focus='true'></input>
+      </view>
+    </view>
+    <view class="box">
+      <view class="title">学号</view>
       <view class="circle">
         <input name='num' type='number' placeholder='请输入学号' confirm-type='next'></input>
       </view>
+    </view>
+    <view class="box">
+      <view class="title">电话</view>
       <view class="circle">
         <input name='phone' type='number' placeholder='请输入电话' confirm-type='next' minlength='11' maxlength='11'></input>
       </view>
+    </view>
+    <view class="box">
+      <view class="title">邮箱</view>
       <view class="circle">
         <input name='email' type='text' placeholder='请输入邮箱' confirm-hold='next'></input>
       </view>
-
-
+    </view>
+    <view class="box">
+      <view class="title">专业</view>
       <view class="circle">
         <view class="section">
           <picker bindchange="bindCasePickerChange_major" value='{{index1}}' range='{{array1}}'>
@@ -33,8 +40,10 @@
           </picker>
         </view>
       </view>
-
-      <view class="circle1">
+    </view>
+    <view class="box">
+      <view class="title">年级</view>
+      <view class="circle">
         <view class="section">
           <picker bindchange="bindCasePickerChange_year" value='{{index2}}' range='{{array2}}'>
             <view class="picker">
@@ -43,12 +52,23 @@
           </picker>
         </view>
       </view>
-
+    </view>
+    <view class="box">
+      <view class="title">特长</view>
       <view class="circle2">
         <textarea name='skill' type='text' confirm-hold='next' placeholder='请输入个人特长'></textarea>
       </view>
-
-      <button class="btn" formType="submit">提交</button>
     </view>
+
+
+
+
+
+
+
+
+
+    <button class="btn" formType="submit">提交</button>
+
   </form>
 </view>
