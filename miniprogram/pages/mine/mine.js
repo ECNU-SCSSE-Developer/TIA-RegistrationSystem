@@ -8,20 +8,17 @@ Page({
   data: {
     code: "",
     openid: "",
-    name: "孙雨晶",
-    major: "软件工程",
-    phone: "18917985620",
-    match: []
+    match: [],
+    man: {'major' : "请注册"},
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
-  onLoad: function (options) {
-
+  onLoad: function(options) {
     var that = this;
     wx.login({
-      success: function (res) {
+      success: function(res) {
         code: res.code
       }
     })
@@ -52,30 +49,31 @@ Page({
         }
       })
     }
-
-
-    wx.request({
-      url: 'https://scsse.me/tia/user',
-      data: {
-        studentId: '10165101001'
-      },
-      method: 'GET',
-      header: {
-        'content-type': 'application/json;charset=utf-8',
-        'sessionid': wx.getStorageSync('sessionid')
-      },
-      success: function (res) {
-        console.log('personal info: ' + res.data);
-        that.setData({
-          man: res.data,
-        })
-      },
-      fail: function (res) {
-        console.log("Sorry,please try again!")
-      }
-    })
+    let studentId = wx.getStorageSync("studentId")
+    if (studentId) {
+      wx.request({
+        url: 'https://scsse.me/tia/user',
+        data: {
+          studentId: wx.getStorageSync('studentId')
+        },
+        method: 'GET',
+        header: {
+          'content-type': 'application/json;charset=utf-8',
+          'sessionid': wx.getStorageSync('sessionid')
+        },
+        success: function(res) {
+          console.log('personal info: ' + res.data);
+          that.setData({
+            man: res.data,
+          })
+        },
+        fail: function(res) {
+          console.log("Sorry,please try again!")
+        }
+      })
+    }
   },
-  getUserInfo: function (e) {
+  getUserInfo: function(e) {
     console.log(e)
     app.globalData.userInfo = e.detail.userInfo
     this.setData({
@@ -86,49 +84,49 @@ Page({
   /**
    * 生命周期函数--监听页面初次渲染完成
    */
-  onReady: function () {
+  onReady: function() {
 
   },
 
   /**
    * 生命周期函数--监听页面显示
    */
-  onShow: function () {
+  onShow: function() {
 
   },
 
   /**
    * 生命周期函数--监听页面隐藏
    */
-  onHide: function () {
+  onHide: function() {
 
   },
 
   /**
    * 生命周期函数--监听页面卸载
    */
-  onUnload: function () {
+  onUnload: function() {
 
   },
 
   /**
    * 页面相关事件处理函数--监听用户下拉动作
    */
-  onPullDownRefresh: function () {
+  onPullDownRefresh: function() {
 
   },
 
   /**
    * 页面上拉触底事件的处理函数
    */
-  onReachBottom: function () {
+  onReachBottom: function() {
 
   },
 
   /**
    * 用户点击右上角分享
    */
-  onShareAppMessage: function () {
+  onShareAppMessage: function() {
 
   }
 })

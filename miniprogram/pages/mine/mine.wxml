@@ -28,7 +28,7 @@
 <view class="list">
   <navigator url="../teamlist_create/teamlist_create?id={{item.studentId}}" class="list_item" hover-class="weui-cell_active">
     <image class="list_item_img" src="{{userInfo.avatarUrl}}../../image/灯泡.png" />
-    <view class="list_item_text">我创建的队伍</view>
+    <view class="list_item_text">我创建的招聘</view>
     <view class="weui-cell__ft weui-cell__ft_in-access"></view>
   </navigator>
 
@@ -36,14 +36,14 @@
 
   <navigator url="../teamlist_join/teamlist_join" class="list_item" hover-class="weui-cell_active">
     <image class="list_item_img" src="{{userInfo.avatarUrl}}../../image/握手.png" />
-    <view class="list_item_text">我加入的队伍</view>
+    <view class="list_item_text">我加入的招聘</view>
     <view class="weui-cell__ft weui-cell__ft_in-access"></view>
   </navigator>
 
 
   <navigator url="../teamlist_collect/teamlist_collect" class="list_item" hover-class="weui-cell_active">
     <image class="list_item_img" src="{{userInfo.avatarUrl}}../../image/星星.png" />
-    <view class="list_item_text">我收藏的队伍</view>
+    <view class="list_item_text">我收藏的招聘</view>
     <view class="weui-cell__ft weui-cell__ft_in-access"></view>
   </navigator>
 

@@ -29,13 +29,11 @@ Page({
    */
   onLoad: function(options) {
     var that = this;
-    this.setData({
-      id:options.id
-    })
+    
     wx.request({
       url: 'https://scsse.me/tia/user/created',
       data:{
-        'studentId': id,
+        'studentId': wx.getStorageSync("studentId"),
       },
       method: 'GET',
       header: {
@@ -45,24 +43,14 @@ Page({
       success: function (res) {
         console.log('获得比赛信息：' + res.data);
         that.setData({
-          match: res.data,
+          team: res.data,
         })
       },
       fail: function (res) {
         console.log("Sorry,please try again!")
       }
     })
-    wx.request({
-      url: 'https://scsse.me/tia/recruitment/recruit',
-      method: 'GET',
-      header: {
-        'content-type': 'application/json;charset=utf-8',
-        'sessionid': wx.getStorageSync('sessionid')
-      },
-      data: {
-        "studentId": options.studentId
-      },
-    })
+    
   },
 
 
