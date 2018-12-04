@@ -8,6 +8,7 @@
 }
 .weui-form-preview__value_in-hd{
   font-size: 20px;
+  
 }
 .weui-form-preview{
   border-radius: 20px;
@@ -25,4 +26,7 @@
 
 .weui-form-preview__label{
   font-size: 15px;
+}
+.weui-form-preview__hd{
+  text-align: justify;
 }

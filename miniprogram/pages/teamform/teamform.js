@@ -4,19 +4,35 @@ var index = 0;
 Page({
   data: {
     matchId:'',
-    array: ['请选择招募位置', '前端', '后端'],
+    array: ['请选择招募位置', 'java后端', 'web前端','小程序前端','python'],
     index_position: 0,
     objectArray: [{
         id: 0,
-        name: '前端'
+        name: 'java后端'
       },
       {
         id: 1,
-        name: '后端'
+        name: 'web前端'
       },
+      {
+        id:2,
+        name:'小程序前端'
+      },
+      {
+        id:3,
+        name:'python'
+      }
     ],
   },
   bindCasePickerChange_position: function(e) {
+    if (e.detail.value == 4) {
+      position = this.data.objectArray[3].name;
+      index = this.data.objectArray[3].id;
+    }
+    if (e.detail.value == 3) {
+      position = this.data.objectArray[2].name;
+      index = this.data.objectArray[2].id;
+    }
     if (e.detail.value == 2) {
       position = this.data.objectArray[1].name;
       index = this.data.objectArray[1].id;
